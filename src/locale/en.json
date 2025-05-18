@@ -1,0 +1,210 @@
+{
+    "nav": {
+        "fisrtTitle": "Dashboard",
+        "secondTitle": "AB Dashboard",
+        "Search": "Search",
+        "dropdown": {
+            "title": "Notifications",
+            "number": "new",
+            "showAll": "See all notifications"
+        },
+        "profileInf": {
+            "view": "View profile",
+            "setting": "Account settings",
+            "logout": "Logout"
+        }
+    },
+    "sideBar": {
+        "mainMenu": {
+            "title": "Main Menu",
+            "categore": {
+                "dash": "Dashboard",
+                "custom": "Customers",
+                "insucresComp": {
+                    "titleInsucresComp": "Insurance Company",
+                    "categore": {
+                        "Mandatory": "Mandatory Insurance",
+                        "Third": "Third Party Insurance",
+                        "Full": "Full Insurance"
+                    }
+                },
+                "user": "user",
+                "Dealer": "Dealers",
+                "payment": "Payments and Receipts",
+                "report": {
+                    "titleReport": "Reports",
+                    "categore": {
+                        "insuranceAhliaRep": "Ahlia Accident Report",
+                        "AlMashreqRep": "AlMashreq Accident Report",
+                        "TakafulRep": "Takaful Accident Report",
+                        "PalestineRep": "Palestine Accident Report",
+                        "TrustReport": "Trust Accident Report",
+                        "HoliReport": "Holy land Accident Report"
+                    }
+                },
+                "chec": "Checks"
+            }
+        },
+        "support": {
+            "title": "Support",
+            "categore": {
+                "msg": "Customers Messages",
+                "inbo": "Inbox"
+            }
+        },
+        "settings": {
+            "title": "Settings",
+            "categore": {
+                "chart": {
+                    "title": "Charts",
+                    "categore": {
+                        "basic": "Basic Chart",
+                        "advance": "Advanced Chart"
+                    }
+                }
+            },
+            "auth": {
+                "title": "Authentication",
+                "categore": {
+                    "signIn": "Sign In",
+                    "signUp": "Sign Up",
+                    "Reset": "Reset Password"
+                }
+            }
+        }
+    },
+    "home": {
+        "totalCu": "Total Customer",
+        "TotalIncome": "Total Income",
+        "TotalExpenses": "Total Expenses",
+        "DueAmount": "Due Amount",
+        "TotalVisa": "Total Visa Payment",
+        "TotalCash": "Total cash Payment",
+        "TotalBank": "Total Bank Transferes",
+        "TotalProfit": "Total Profit",
+        "chart": {
+            "title": "Payments Overview",
+            "short": "Short by:",
+            "ReceivedAmount": "Received Amount",
+            "DueAmount": "Due Amount"
+        }
+    },
+    "customers": {
+        "firstTitle": "Home",
+        "secondeTitle": "Customers",
+        "buttonAdd": "Add New Customer",
+        "Name":"Name",
+        "Mobile":"Mobile",
+        "Agent":"Agent",
+        "Email":"Email",
+        "Identity":"Identity",
+        "Address":"Address"
+    },
+    "reportInfoTitle": "Report information",
+    "policyInfoTitle": "Policy information",
+    "driverInfoTitle": "Driver information",
+    "vehicleInfoTitle": "Vehicle information",
+    "accidentDetailsTitle": "Accident details",
+    "declarationTitle": "Declaration",
+    "reportNumberLabel": "Report Number",
+    "accidentDateLabel": "Accident Date",
+    "accidentTimeLabel": "Accident Time",
+    "policeNumberLabel": "Policy Number (Police)",
+    "agentNumberLabel": "Agent Number",
+    "policyNumberLabel": "Policy Number",
+    "policyTypeLabel": "Policy Type",
+    "policyTypeOptionDefault": "Select Policy Type",
+    "policyTypeOptionCOM": "COM",
+    "policyTypeOptionTPL": "TPL",
+    "policyTypeOptionA.C.T": "A.C.T",
+    "policyDurationFromLabel": "Policy Duration From",
+    "policyDurationToLabel": "Policy Duration To",
+    "insuredPersonNameLabel": "Insured Person Name",
+    "driverNameLabel": "Driver Name",
+    "idNumberLabel": "ID Number",
+    "ageLabel": "Age",
+    "licenseNumberLabel": "License Number",
+    "licenseTypeLabel": "License Type",
+    "licenseIssueDateLabel": "License Issue Date",
+    "licenseMatchesVehicleLabel": "License Matches Vehicle",
+    "vehicleUsageLabel": "Usage",
+    "manufactureYearLabel": "Manufacture Year",
+    "vehicleTypeLabel": "Vehicle Type",
+    "registrationNumberLabel": "Registration Number (Plate Number)",
+    "registrationTypeLabel": "Registration Type",
+    "lastTestDateLabel": "Last Test Date",
+    "licenseExpiryLabel": "License Expiry Date",
+    "accidentLocationLabel": "Accident Location",
+    "weatherConditionLabel": "Weather Condition",
+    "purposeOfUseLabel": "Purpose of Use",
+    "accidentTypeLabel": "Accident Type",
+    "accidentTypeOptionDefault": "Select Accident Type",
+    "accidentTypeOptionCollision": "جسدي",
+    "accidentTypeOptionOverturn": "مادي",
+    "accidentTypeOptionRunOver": "جسدي + مادي",
+    "accidentTime": "accident time",
+    "accidentsketch": "accident sketch",
+    "accidentTypeOptionFire": "Fire",
+    "accidentTypeOptionOther": "Other",
+    "driverStatementLabel": "Driver Statement",
+    "thirdPartyDamagedVehiclesTitle": "Third Party Damaged Vehicles",
+    "thirdPartyVehicleItem": "Vehicle #{index}: {id}",
+    "newLabel": "New",
+    "deleteButton": "Delete",
+    "addDamagedVehicleButton": "+ Add Damaged Vehicle",
+    "thirdPartyInjuriesTitle": "Third Party Injuries",
+    "thirdPartyInjuryItem": "Injury #{index}: {name}",
+    "addInjuryButton": "+ Add Injury",
+    "declarationDriverSignatureLabel": "Driver/Authorized Signature",
+    "declarationDateLabel": "Declaration Date",
+    "declarationOfficerSignatureLabel": "Officer Signature",
+    "declarationOfficerDateLabel": "Officer Signature Date",
+    "modalTitle": "Accident Report Form",
+    "step1Indicator": "Report Information",
+    "step2Indicator": "Policy Information",
+    "step3Indicator": "Driver Information",
+    "step4Indicator": "Vehicle Information",
+    "step5Indicator": "Accident Details",
+    "step6Indicator": "Declaration",
+    "backButton": "Previous",
+    "nextButton": "Next",
+    "submitButton": "Submit",
+    "formSubmissionSuccess": "Form submitted successfully!",
+    "formSubmissionError": "Error submitting form: ",
+    "plateNumberRequiredError": "Vehicle Registration Number (Plate Number) is required to submit the report.",
+    "addNewInsurance": "Add New Insurance",
+    "newInsuranceForm": "New Insurance Form",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "insuranceType": "Insurance Type",
+    "chooseType": "Choose Type",
+    "mandatory": "Mandatory",
+    "comprehensive": "Comprehensive",
+    "thirdParty": "Third Party",
+    "isCustomerUnder24": "Is Customer Under 24?",
+    "yes": "Yes",
+    "no": "No",
+    "insuranceCompany": "Insurance Company",
+    "enterInsuranceCompany": "Enter Insurance Company",
+    "paymentMethod": "Payment Method",
+    "choosePaymentMethod": "Choose Payment Method",
+    "cash": "Cash",
+    "creditCard": "Credit Card",
+    "bankTransfer": "Bank Transfer",
+    "dealer": "Dealer",
+    "enterDealerName": "Enter Dealer Name",
+    "insuranceAmount": "Insurance Amount",
+    "enterInsuranceAmount": "Enter Insurance Amount",
+    "paidAmount": "Paid Amount",
+    "enterPaidAmount": "Enter Paid Amount",
+    "paymentDate": "Payment Date",
+    "attachments": "Attachments",
+    "uploadAFile": "Upload a file",
+    "orDragAndDrop": "or drag and drop",
+    "pngJpgUpTo": "PNG, JPG, PDF up to 10MB",
+    "addMoreFiles": "Add more files",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "insuranceAddedSuccessfully": "Insurance added successfully!",
+    "errorAddingInsurance": "Error adding insurance. Please try again."
+}

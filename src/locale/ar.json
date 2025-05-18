@@ -1,0 +1,210 @@
+{
+    "nav": {
+        "fisrtTitle": "لوحة القيادة",
+        "secondTitle": "لوحة القيادة AB ",
+        "Search": "ابحث",
+        "dropdown": {
+            "title": "الاشعارات",
+            "number": "جديد",
+            "showAll": "رؤية جميع الاشعارات"
+        },
+        "profileInf": {
+            "view": "عرض الملف الشخصي",
+            "setting": "إعدادات الحساب",
+            "logout": "تسجيل الخروج"
+        }
+    },
+    "sideBar": {
+        "mainMenu": {
+            "title": "القائمة الرئيسية",
+            "categore": {
+                "dash": "لوحة القيادة",
+                "custom": "العملاء",
+                "insucresComp": {
+                    "titleInsucresComp": "شركات التامين",
+                    "categore": {
+                        "Mandatory": "التأمين الإلزامي",
+                        "Third": "تأمين الطرف الثالث",
+                        "Full": "التأمين الكامل"
+                    }
+                },
+                "user": "المستخدمين",
+                "Dealer": "الوكلاء",
+                "payment": "المدفوعات والإيصالات",
+                "report": {
+                    "titleReport": "التقارير",
+                    "categore": {
+                        "insuranceAhliaRep": "تقرير الحوادث الاهلية",
+                        "AlMashreqRep": "تقرير حوادث المشرق",
+                        "TakafulRep": "تقرير حوادث التكافل",
+                        "PalestineRep": "تقرير حوادث فلسطين",
+                        "TrustReport": "تقرير حوادث الثقة",
+                        "HoliReport": "تقرير حوادث الارض المقدسة"
+                    }
+                },
+                "chec": "الشيكات"
+            }
+        },
+        "support": {
+            "title": "الدعم",
+            "categore": {
+                "msg": "رسائل العملاء",
+                "inbo": "البريد الوارد"
+            }
+        },
+        "settings": {
+            "title": "الإعدادات",
+            "categore": {
+                "chart": {
+                    "title": "الرسوم البيانية",
+                    "categore": {
+                        "basic": "الرسم البياني الأساسي",
+                        "advance": "الرسم البياني المتقدم"
+                    }
+                }
+            },
+            "auth": {
+                "title": "المصادقة",
+                "categore": {
+                    "signIn": "تسجيل الدخول",
+                    "signUp": "تسجيل الخروج",
+                    "Reset": "إعادة تعيين كلمة المرور"
+                }
+            }
+        }
+    },
+    "home": {
+        "totalCu": "إجمالي العملاء",
+        "TotalIncome": "إجمالي الدخل",
+        "TotalExpenses": "إجمالي النفقات",
+        "DueAmount": "المبلغ المستحق",
+        "TotalVisa": "إجمالي مدفوعات التأشيرة",
+        "TotalCash": "إجمالي الدفع النقدي",
+        "TotalBank": "إجمالي التحويلات المصرفية",
+        "TotalProfit": "إجمالي الربح",
+        "chart": {
+            "title": "نظرة عامة على المدفوعات ",
+            "short": "باختصار بواسطة:",
+            "ReceivedAmount": "المبلغ المستلم ",
+            "DueAmount": "المبلغ المستحق "
+        }
+    },
+    "customers": {
+        "firstTitle": "الرئيسية",
+        "secondeTitle": "الزبائن",
+        "buttonAdd": "اضافة زبون جديد",
+        "Name":"الاسم",
+        "Mobile":"رقم الهاتف",
+        "Agent":"اسم الوكيل",
+        "Email":"البريد الالكتروني",
+        "Identity":"المعرف",
+        "Address":"العنوان"
+    },
+    "reportInfoTitle": "معلومات التقرير",
+    "policyInfoTitle": "معلومات الوثيقة",
+    "driverInfoTitle": "معلومات السائق",
+    "vehicleInfoTitle": "معلومات المركبة",
+    "accidentDetailsTitle": "تفاصيل الحادث",
+    "declarationTitle": "الإقرار",
+    "reportNumberLabel": "رقم التقرير",
+    "accidentDateLabel": "تاريخ الحادث",
+    "accidentTimeLabel": "وقت الحادث",
+    "policeNumberLabel": "رقم الوثيقة (الشرطة)",
+    "agentNumberLabel": "رقم الوكيل",
+    "policyNumberLabel": "رقم الوثيقة",
+    "policyTypeLabel": "نوع الوثيقة",
+    "policyTypeOptionDefault": "اختر نوع الوثيقة",
+    "policyTypeOptionCOM": "شامل (COM)",
+    "policyTypeOptionTPL": "ضد الغير (TPL)",
+    "policyTypeOptionA.C.T": "A.C.T",
+    "policyDurationFromLabel": "مدة الوثيقة من",
+    "policyDurationToLabel": "مدة الوثيقة إلى",
+    "insuredPersonNameLabel": "اسم الشخص المؤمن عليه",
+    "driverNameLabel": "اسم السائق",
+    "idNumberLabel": "رقم الهوية",
+    "ageLabel": "العمر",
+    "licenseNumberLabel": "رقم الرخصة",
+    "licenseTypeLabel": "نوع الرخصة",
+    "licenseIssueDateLabel": "تاريخ إصدار الرخصة",
+    "licenseMatchesVehicleLabel": "الرخصة تتطابق مع المركبة",
+    "vehicleUsageLabel": "الاستخدام",
+    "manufactureYearLabel": "سنة الصنع",
+    "vehicleTypeLabel": "نوع المركبة",
+    "registrationNumberLabel": "رقم التسجيل (رقم اللوحة)",
+    "registrationTypeLabel": "نوع التسجيل",
+    "lastTestDateLabel": "تاريخ آخر فحص",
+    "licenseExpiryLabel": "تاريخ انتهاء الرخصة",
+    "accidentLocationLabel": "موقع الحادث",
+    "weatherConditionLabel": "حالة الطقس",
+    "purposeOfUseLabel": "غرض الاستخدام",
+    "accidentTypeLabel": "نوع الحادث",
+    "accidentTypeOptionDefault": "اختر نوع الحادث",
+    "accidentTypeOptionCollision": "جسدي",
+    "accidentTypeOptionOverturn": "مادي",
+    "accidentTypeOptionRunOver": "جسدي + مادي",
+    "accidentTime": "وقت الحادث",
+    "accidentsketch": "رسم توضيحي للحادث",
+    "accidentTypeOptionFire": "حريق",
+    "accidentTypeOptionOther": "أخرى",
+    "driverStatementLabel": "إفادة السائق",
+    "thirdPartyDamagedVehiclesTitle": "مركبات الطرف الثالث المتضررة",
+    "thirdPartyVehicleItem": "مركبة رقم #{index}: {id}",
+    "newLabel": "جديد",
+    "deleteButton": "حذف",
+    "addDamagedVehicleButton": "+ إضافة مركبة متضررة",
+    "thirdPartyInjuriesTitle": "إصابات الطرف الثالث",
+    "thirdPartyInjuryItem": "إصابة رقم #{index}: {name}",
+    "addInjuryButton": "+ إضافة إصابة",
+    "declarationDriverSignatureLabel": "توقيع السائق/المخول",
+    "declarationDateLabel": "تاريخ الإقرار",
+    "declarationOfficerSignatureLabel": "توقيع الضابط",
+    "declarationOfficerDateLabel": "تاريخ توقيع الضابط",
+    "modalTitle": "نموذج تقرير الحادث",
+    "step1Indicator": "معلومات التقرير",
+    "step2Indicator": "معلومات الوثيقة",
+    "step3Indicator": "معلومات السائق",
+    "step4Indicator": "معلومات المركبة",
+    "step5Indicator": "تفاصيل الحادث",
+    "step6Indicator": "الإقرار",
+    "backButton": "السابق",
+    "nextButton": "التالي",
+    "submitButton": "إرسال",
+    "formSubmissionSuccess": "تم إرسال النموذج بنجاح!",
+    "formSubmissionError": "حدث خطأ أثناء إرسال النموذج: ",
+    "plateNumberRequiredError": "رقم تسجيل المركبة (رقم اللوحة) مطلوب لإرسال التقرير.",
+    "addNewInsurance": "إضافة تأمين جديد",
+    "newInsuranceForm": "نموذج تأمين جديد",
+    "startDate": "تاريخ البدء",
+    "endDate": "تاريخ الانتهاء",
+    "insuranceType": "نوع التأمين",
+    "chooseType": "اختر النوع",
+    "mandatory": "إلزامي",
+    "comprehensive": "شامل",
+    "thirdParty": "ضد الغير",
+    "isCustomerUnder24": "هل العميل أقل من 24 عامًا؟",
+    "yes": "نعم",
+    "no": "لا",
+    "insuranceCompany": "شركة التأمين",
+    "enterInsuranceCompany": "أدخل اسم شركة التأمين",
+    "paymentMethod": "طريقة الدفع",
+    "choosePaymentMethod": "اختر طريقة الدفع",
+    "cash": "نقداً",
+    "creditCard": "بطاقة ائتمان",
+    "bankTransfer": "تحويل بنكي",
+    "dealer": "الوكيل",
+    "enterDealerName": "أدخل اسم الوكيل",
+    "insuranceAmount": "مبلغ التأمين",
+    "enterInsuranceAmount": "أدخل مبلغ التأمين",
+    "paidAmount": "المبلغ المدفوع",
+    "enterPaidAmount": "أدخل المبلغ المدفوع",
+    "paymentDate": "تاريخ الدفع",
+    "attachments": "المرفقات",
+    "uploadAFile": "ارفع ملفًا",
+    "orDragAndDrop": "أو قم بالسحب والإفلات",
+    "pngJpgUpTo": "PNG, JPG, PDF حتى 10 ميجابايت",
+    "addMoreFiles": "إضافة المزيد من الملفات",
+    "submit": "إرسال",
+    "submitting": "جارٍ الإرسال...",
+    "insuranceAddedSuccessfully": "تمت إضافة التأمين بنجاح!",
+    "errorAddingInsurance": "خطأ في إضافة التأمين. يرجى المحاولة مرة أخرى."
+}
