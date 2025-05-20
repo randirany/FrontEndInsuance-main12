@@ -6,7 +6,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-
 import { X, User, Users, Info } from 'lucide-react';
 function Departments() {
     const [departments, setDepartments] = useState([]);
@@ -31,7 +30,6 @@ function Departments() {
     });
     const [availableEmployees, setAvailableEmployees] = useState([]);
     
-    // New state for department filter
     const [selectedDepartmentId, setSelectedDepartmentId] = useState('all');
     const [departmentEmployees, setDepartmentEmployees] = useState([]);
     const [loadingEmployees, setLoadingEmployees] = useState(false);
@@ -52,10 +50,8 @@ function Departments() {
         }
     };
 
-    // Fetch employees by department
     const fetchEmployeesByDepartment = async (departmentId) => {
         if (departmentId === 'all') {
-            // If 'all' is selected, use the existing getAllEmployees function
             setDepartmentEmployees(getAllEmployees());
             return;
         }
@@ -68,7 +64,6 @@ function Departments() {
             });
             console.log('Department employees:', res.data);
             
-            // Format employees to match the DataGrid format
             const formattedEmployees = res.data.employees.map(emp => ({
                 ...emp,
                 id: emp._id
@@ -79,12 +74,10 @@ function Departments() {
         } catch (err) {
             console.error('Error fetching department employees:', err);
             setLoadingEmployees(false);
-            // If there's an error, set empty array
             setDepartmentEmployees([]);
         }
     };
 
-    // Fetch available employees (not assigned to any department)
     const fetchAvailableEmployees = async () => {
         try {
             const token = `islam__${localStorage.getItem("token")}`;
@@ -103,9 +96,8 @@ function Departments() {
         fetchAvailableEmployees();
     }, []);
     
-    // Effect to fetch employees when department selection changes
     useEffect(() => {
-        if (selectedTab === 1) { // Only when on the employees tab
+        if (selectedTab === 1) { 
             fetchEmployeesByDepartment(selectedDepartmentId);
         }
     }, [selectedDepartmentId, selectedTab]);
@@ -124,7 +116,6 @@ function Departments() {
 
     const handleTabChange = (event, newValue) => {
         setSelectedTab(newValue);
-        // Reset to "all" when switching tabs
         if (newValue === 1) {
             setSelectedDepartmentId('all');
             setDepartmentEmployees(getAllEmployees());
@@ -204,7 +195,6 @@ function Departments() {
                 email: '',
                 password: '',
             });
-            // Refresh the employee list if we're viewing by department
             if (selectedTab === 1 && selectedDepartmentId !== 'all') {
                 fetchEmployeesByDepartment(selectedDepartmentId);
             }
@@ -228,7 +218,6 @@ function Departments() {
                 email: '',
                 password: '',
             });
-            // Refresh the employee list if we're viewing by department
             if (selectedTab === 1 && selectedDepartmentId !== 'all') {
                 fetchEmployeesByDepartment(selectedDepartmentId);
             }
@@ -246,7 +235,6 @@ function Departments() {
                     headers: { token }
                 });
                 fetchDepartments();
-                // Refresh the employee list if we're viewing by department
                 if (selectedTab === 1 && selectedDepartmentId !== 'all') {
                     fetchEmployeesByDepartment(selectedDepartmentId);
                 }
@@ -261,7 +249,6 @@ function Departments() {
                     headers: { token }
                 });
                 fetchDepartments();
-                // Refresh the employee list if we're viewing by department
                 if (selectedTab === 1 && selectedDepartmentId !== 'all') {
                     fetchEmployeesByDepartment(selectedDepartmentId);
                 }
@@ -275,7 +262,6 @@ function Departments() {
         const { name, value, checked } = e.target;
 
         if (name === 'permissions') {
-            // Handle permissions checkboxes
             const updatedPermissions = [...formData.permissions];
             if (checked) {
                 updatedPermissions.push(value);
@@ -454,7 +440,6 @@ function Departments() {
         return allEmployees;
     };
 
-    // List of available permissions
     const availablePermissions = [
         "addAccedent", "showAccedent", "deleteAccedent",
         "createNotification", "getNotifications", "markAsRead", "Deletenotification",
@@ -466,9 +451,9 @@ function Departments() {
     ];
 
     return (
-        <div className="p-4">
+        <div className="py-10 px-4 dark:bg-dark2 dark:text-dark3" style={{ minHeight: '100vh' }}>
 
-            <div className="bg-white flex p-[22px] rounded-md justify-between items-center">
+            <div className="bg-[rgb(255,255,255)] dark:bg-navbarBack flex p-[22px] rounded-md justify-between items-center mb-3">
                 <div className="flex gap-[14px]">
                     <a className href="/home" data-discover="true">Home</a>
                     <svg width={21} height={20} viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M11.9392 4.55806C12.1833 4.31398 12.579 4.31398 12.8231 4.55806L17.8231 9.55806C18.0672 9.80214 18.0672 10.1979 17.8231 10.4419L12.8231 15.4419C12.579 15.686 12.1833 15.686 11.9392 15.4419C11.6952 15.1979 11.6952 14.8021 11.9392 14.5581L15.8723 10.625H4.04785C3.70267 10.625 3.42285 10.3452 3.42285 10C3.42285 9.65482 3.70267 9.375 4.04785 9.375H15.8723L11.9392 5.44194C11.6952 5.19786 11.6952 4.80214 11.9392 4.55806Z" fill="#6B7280" /></svg>
@@ -484,13 +469,12 @@ function Departments() {
                         });
                         setShowEditForm(true);
                     }}
-                    className="p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 "
+                    className="p-2 bg-indigo-600  text-[rgb(255,255,255)] rounded-md hover:bg-blue-700 "
                 >
                     Add new Department
                 </button>
             </div>
-            {/* Tabs */}
-            <div className='bg-white mt-3 rounded-md'>
+            <div className='bg-[rgb(255,255,255)] mt-3 rounded-md'>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 2 }}>
                     <Tabs value={selectedTab} onChange={handleTabChange} aria-label="department tabs">
                         <Tab icon={<Users className="w-4 h-4 mr-2" />} iconPosition="start" label="Departments" />
@@ -498,7 +482,6 @@ function Departments() {
                     </Tabs>
                 </Box>
 
-                {/* Content based on selected tab */}
                 {selectedTab === 0 ? (
                     <DataGrid
                         rows={departments}
@@ -512,8 +495,7 @@ function Departments() {
                     />
                 ) : (
                     <div>
-                        {/* Department selection dropdown */}
-                        <div className="p-4 border-b">
+                        <div className="p-4 border dark:border-borderNav-b">
                             <FormControl variant="outlined" sx={{ minWidth: 300 }}>
                                 <InputLabel id="department-select-label">Select Department</InputLabel>
                                 <Select
@@ -533,7 +515,6 @@ function Departments() {
                             </FormControl>
                         </div>
                         
-                        {/* Employees DataGrid */}
                         <DataGrid
                             rows={selectedDepartmentId === 'all' ? getAllEmployees() : departmentEmployees}
                             columns={employeeColumns}
@@ -546,10 +527,9 @@ function Departments() {
                     </div>
                 )}
 
-                {/* Department Details Modal */}
                 {showDepartmentDetails && selectedDepartment?.employees && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-                    <div className="2md:w-75 w-full max-w-[800px] bg-white rounded-lg shadow-lg p-6">
+                    <div className="2md:w-75 w-full max-w-[800px] bg-[rgb(255,255,255)] rounded-lg shadow-lg p-6">
                         <div className="flex items-center justify-between pb-1 p-2 rounded-md">
                                 <h2 className="text-2xl font-semibold">  {selectedDepartment.name}</h2>
                                 <button onClick={() => setShowDepartmentDetails(false)} className="p-1 rounded-full hover:bg-gray-100">
@@ -557,7 +537,7 @@ function Departments() {
                                 </button>
                             </div>
 
-                            <div className="border border-gray-300 rounded-md p-4 mb-4">
+                            <div className="border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md p-4 mb-4">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
                                         <p className="font-semibold"> Department name:</p>
@@ -578,7 +558,7 @@ function Departments() {
                                 </div>
                             </div>
 
-                            <div className="border border-gray-300 rounded-md p-4 mb-4">
+                            <div className="border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md p-4 mb-4">
                                 <h3 className="text-xl font-semibold mb-2">permissions</h3>
                                 <div className="grid grid-cols-3 gap-2">
                                     {selectedDepartment.permissions && selectedDepartment.permissions.length > 0 ? (
@@ -596,10 +576,9 @@ function Departments() {
                     </div>
                 )}
 
-                {/* Edit/Add Department Form */}
                 {showEditForm && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-3">
-                    <div className="2md:w-75 w-full max-w-[800px] bg-white rounded-lg shadow-lg p-6">
+                    <div className="2md:w-75 w-full max-w-[800px] bg-[rgb(255,255,255)]  dark:bg-dark2 rounded-lg shadow-lg p-6">
                         <div className="flex items-center justify-between pb-1 p-2 rounded-md">
                                 <h2 className="text-2xl font-semibold rounded-md">
                                     {selectedDepartment ? ' Edit department' : ' Add new department '}
@@ -609,20 +588,20 @@ function Departments() {
                                 </button>
                             </div>
 
-                            <form onSubmit={selectedDepartment ? handleUpdateDepartment : handleAddDepartment} className="mt-2 space-y-4 border border-gray-300 rounded-md">
+                            <form onSubmit={selectedDepartment ? handleUpdateDepartment : handleAddDepartment} className="mt-2 space-y-4 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md">
                                 <div className="grid grid-cols-2 gap-3 px-4 py-4">
                                     <div>
                                         <label className="block text-sm font-medium"> Department name</label>
-                                        <input type="text" name="name" required className="w-full p-2 border rounded-md" value={formData.name} onChange={handleFormChange} />
+                                        <input type="text" name="name" required className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack" value={formData.name} onChange={handleFormChange} />
                                     </div>
                                     <div className="col-span-2">
                                         <label className="block text-sm font-medium">description</label>
-                                        <textarea name="description" required rows="1" className="w-full p-2 border rounded-md" value={formData.description} onChange={handleFormChange} />
+                                        <textarea name="description" required rows="1" className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack" value={formData.description} onChange={handleFormChange} />
                                     </div>
 
                                     <div className="col-span-2">
                                         <label className="block text-sm font-medium mb-2">permission</label>
-                                        <div className="grid grid-cols-3 gap-x-3 gap-y-2 max-h-60 overflow-y-auto p-2 border rounded-md">
+                                        <div className="grid grid-cols-3 gap-x-3 gap-y-2 max-h-60 overflow-y-auto p-2 border dark:border-borderNav rounded-md">
                                             {availablePermissions.map((permission) => (
                                                 <div key={permission} className="flex items-center">
                                                     <input
@@ -642,7 +621,7 @@ function Departments() {
                                 </div>
 
                                 <div className="flex justify-end px-4 pb-4">
-                                    <button type="submit" className="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-500">
+                                    <button type="submit" className="px-4 py-2 text-[rgb(255,255,255)] bg-indigo-600 rounded-md hover:bg-indigo-500">
                                         {selectedDepartment ? ' save' : 'add department '}
                                     </button>
                                 </div>
@@ -651,10 +630,9 @@ function Departments() {
                     </div>
                 )}
 
-                {/* Add Employee Form */}
                 {showAddEmployeeForm && selectedDepartment && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-3">
-                    <div className="2md:w-75 w-full max-w-[700px] bg-white rounded-lg shadow-lg p-6">
+                    <div className="2md:w-75 w-full max-w-[700px] bg-[rgb(255,255,255)] rounded-lg shadow-lg p-6">
                         <div className="flex items-center justify-between pb-1 p-2 rounded-md">
                                 <h2 className="text-2xl font-semibold rounded-md">
                                     Add a new employee at {selectedDepartment.name}
@@ -664,14 +642,14 @@ function Departments() {
                                 </button>
                             </div>
 
-                            <form onSubmit={handleAddEmployeeSubmit} className="mt-2 space-y-4 border border-gray-300 rounded-md">
+                            <form onSubmit={handleAddEmployeeSubmit} className="mt-2 space-y-4 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md">
                                 <div className="grid grid-cols-1 gap-3 px-4 py-4">
                                     <div>
                                         <label className="block text-sm font-medium">Name</label>
                                         <input
                                             type="text"
                                             name="name"
-                                            className="w-full p-2 border rounded-md"
+                                            className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack"
                                             value={employeeFormData.name}
                                             onChange={handleEmployeeFormChange}
                                         />
@@ -681,7 +659,7 @@ function Departments() {
                                         <input
                                             type="email"
                                             name="email"
-                                            className="w-full p-2 border rounded-md"
+                                            className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack"
                                             value={employeeFormData.email}
                                             onChange={handleEmployeeFormChange}
                                         />
@@ -691,7 +669,7 @@ function Departments() {
                                         <input
                                             type="password"
                                             name="password"
-                                            className="w-full p-2 border rounded-md"
+                                            className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack"
                                             value={employeeFormData.password}
                                             onChange={handleEmployeeFormChange}
                                         />
@@ -700,7 +678,7 @@ function Departments() {
                                 </div>
 
                                 <div className="flex justify-end px-4 pb-4">
-                                    <button type="submit" className="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-500">
+                                    <button type="submit" className="px-4 py-2 text-[rgb(255,255,255)] bg-indigo-600 rounded-md hover:bg-indigo-500">
                                         save
                                     </button>
                                 </div>
@@ -708,10 +686,9 @@ function Departments() {
                         </div>
                     </div>
                 )}
-                {/* Add Head Form */}
                 {showAddHeadForm && selectedDepartment && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-3">
-                    <div className="2md:w-75 w-full max-w-[700px] bg-white rounded-lg shadow-lg p-6">
+                    <div className="2md:w-75 w-full max-w-[700px] bg-[rgb(255,255,255)] rounded-lg shadow-lg p-6">
                         <div className="flex items-center justify-between pb-1 p-2 rounded-md">
                                 <h2 className="text-2xl font-semibold rounded-md">
                                     Add Head for {selectedDepartment.name} Department
@@ -721,14 +698,14 @@ function Departments() {
                                 </button>
                             </div>
 
-                            <form onSubmit={handleAddHeadSubmit} className="mt-2 space-y-4 border border-gray-300 rounded-md">
+                            <form onSubmit={handleAddHeadSubmit} className="mt-2 space-y-4 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md">
                                 <div className="grid grid-cols-1 gap-3 px-4 py-4">
                                     <div>
                                         <label className="block text-sm font-medium">Name</label>
                                         <input
                                             type="text"
                                             name="name"
-                                            className="w-full p-2 border rounded-md"
+                                            className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack"
                                             value={headFormData.name}
                                             onChange={handleHeadFormChange}
                                         />
@@ -738,7 +715,7 @@ function Departments() {
                                         <input
                                             type="email"
                                             name="email"
-                                            className="w-full p-2 border rounded-md"
+                                            className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack"
                                             value={headFormData.email}
                                             onChange={handleHeadFormChange}
                                         />
@@ -748,7 +725,7 @@ function Departments() {
                                         <input
                                             type="password"
                                             name="password"
-                                            className="w-full p-2 border rounded-md"
+                                            className="w-full p-2 border dark:border-borderNav rounded-md  dark:bg-navbarBack dark:bg-navbarBack"
                                             value={headFormData.password}
                                             onChange={handleHeadFormChange}
                                         />
@@ -756,7 +733,7 @@ function Departments() {
                                 </div>
 
                                 <div className="flex justify-end px-4 pb-4">
-                                    <button type="submit" className="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-500">
+                                    <button type="submit" className="px-4 py-2 text-[rgb(255,255,255)] bg-indigo-600 rounded-md hover:bg-indigo-500">
                                         Save
                                     </button>
                                 </div>

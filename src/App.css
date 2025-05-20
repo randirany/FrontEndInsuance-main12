@@ -27,10 +27,14 @@
 .linkPage.active {
   background-color: rgb(229, 231, 235);
   padding: .5rem 0;
-  border-radius: 0.5rem;
+  border: 0.5rem;
 }
 
 .secondcomponent {
+  overflow: hidden;
+  background-color: rgb(2, 13, 26);
+}
+.secondcomponentLight {
   overflow: hidden;
   background-color: rgb(241, 242, 242);
 }

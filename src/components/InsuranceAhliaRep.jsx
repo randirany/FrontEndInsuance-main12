@@ -109,8 +109,6 @@ const t = (key, ...args) => {
     return text;
 };
 
-const API_BASE_URL = "https://backendinstursed.onrender.com/api/v1";
-
 function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
     if (!isOpen) return null;
 
@@ -334,7 +332,7 @@ function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
             <div className="flex justify-between items-center">
                 {[1, 2, 3, 4, 5, 6].map((step) => (
                     <div key={step} className="flex flex-col items-center text-center flex-1">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium ${currentStep >= step ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
+                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium ${currentStep >= step ? 'bg-indigo-600 text-[rgb(255,255,255)]' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
                         <span className="text-xs mt-1 text-gray-600">
                             {step === 1 && t('step1Indicator')} {step === 2 && t('step2Indicator')} {step === 3 && t('step3Indicator')}
                             {step === 4 && t('step4Indicator')} {step === 5 && t('step5Indicator')} {step === 6 && t('step6Indicator')}
@@ -349,15 +347,15 @@ function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
         const inputId = `${section || ''}${subField || ''}${arrayName || ''}${index || ''}${itemField || ''}${name || label}`;
         return (
             <div>
-                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700">{t(label)} {required && <span className="text-red-500">*</span>}</label>
+                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]">{t(label)} {required && <span className="text-red-500">*</span>}</label>
                 {type === "select" ? (
-                    <select id={inputId} name={name} value={value || ''} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} className="mt-1 w-full p-2 border border-gray-300 rounded-md" required={required}>
+                    <select id={inputId} name={name} value={value || ''} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md" required={required}>
                         {(options || []).map(opt => <option key={opt.value} value={opt.value}>{t(opt.label)}</option>)}
                     </select>
                 ) : type === "textarea" ? (
-                    <textarea id={inputId} name={name} value={value || ''} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} rows="3" className="mt-1 w-full p-2 border border-gray-300 rounded-md" required={required}></textarea>
+                    <textarea id={inputId} name={name} value={value || ''} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} rows="3" className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md" required={required}></textarea>
                 ) : (
-                    <input id={inputId} type={type} name={name} value={value || ''} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} className="mt-1 w-full p-2 border border-gray-300 rounded-md" required={required} />
+                    <input id={inputId} type={type} name={name} value={value || ''} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md" required={required} />
                 )}
             </div>
         );
@@ -367,7 +365,7 @@ function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
         const inputId = `${section || ''}${subField || ''}${arrayName || ''}${index || ''}${itemField || ''}${name || label}`;
         return (
             <div className="flex items-center col-span-1 md:col-span-2 mt-1">
-                <input type="checkbox" id={inputId} name={name} checked={Boolean(checked)} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} className="h-4 w-4 text-indigo-600 border-gray-300 rounded" />
+                <input type="checkbox" id={inputId} name={name} checked={Boolean(checked)} onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField || name)} className="h-4 w-4 text-indigo-600 border dark:border-borderNav-gray-300 rounded" />
                 <label htmlFor={inputId} className="ml-2 block text-sm text-gray-700">{t(label)}</label>
             </div>
         );
@@ -378,15 +376,15 @@ function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-y-auto py-4">
-            <div className="w-full max-w-[800px] bg-white rounded-lg shadow-lg">
-                <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-                    <h2 className="text-xl font-semibold text-gray-800">{modalTitleText}</h2>
+            <div className="w-full max-w-[800px] bg-[rgb(255,255,255)] rounded-lg shadow-lg dark:bg-navbarBack ">
+                <div className="flex items-center justify-between px-6 py-4 border-b  dark:border-borderNav-gray-200">
+                    <h2 className="text-xl font-semibold text-gray-800 dark:text-[rgb(255,255,255)]">{modalTitleText}</h2>
                     <button onClick={() => onClose(false)} className="p-1 rounded-full text-gray-500 hover:bg-gray-100" disabled={isSubmitting}><X className="w-5 h-5" /></button>
                 </div>
                 {renderStepIndicator()}
                 <form onSubmit={handleSubmit} className="rounded-md">
-                    <div className="flex items-center justify-between pb-2 border-b border-gray-300 mx-6 mb-4">
-                        <p className="text-lg font-semibold text-gray-700">{getStepTitle()}</p>
+                    <div className="flex items-center justify-between pb-2 border-b  dark:border-borderNav-gray-300 mx-6 mb-4">
+                        <p className="text-lg font-semibold text-gray-700 dark:text-[rgb(255,255,255)]">{getStepTitle()}</p>
                     </div>
                     <div className="px-6 pb-6 max-h-[calc(100vh-320px)] overflow-y-auto space-y-4">
                         {currentStep === 1 && (
@@ -453,9 +451,9 @@ function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
                                 <div>
                                     <h3 className="text-md font-medium text-gray-700 mb-2">{t('thirdPartyDamagedVehiclesTitle')}</h3>
                                     {(formData.thirdPartyVehicles || []).map((vehicle, index) => (
-                                        <div key={index} className="bg-gray-50 p-3 rounded-md mb-2 border border-gray-200 space-y-2">
+                                        <div key={index} className="bg-gray-50 p-3 rounded-md mb-2  dark:bg-borderNav border dark:border-borderNav-gray-200 space-y-2">
                                             <div className="flex justify-between items-center">
-                                                <span className="text-sm text-gray-700">{t('thirdPartyVehicleItem', { index: index + 1, id: vehicle.vehicleNumber || t('newLabel') })}</span>
+                                                <span className="text-sm text-gray-700 dark:text-[rgb(255,255,255)] ">{t('thirdPartyVehicleItem', { index: index + 1, id: vehicle.vehicleNumber || t('newLabel') })}</span>
                                                 <button type="button" onClick={() => removeArrayItem('thirdPartyVehicles', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
                                             </div>
                                             {renderCommonInput("tpv_vehicleNumberLabel", "vehicleNumber", vehicle.vehicleNumber, "text", false, null, null, null, "thirdPartyVehicles", index, "vehicleNumber")}
@@ -482,7 +480,7 @@ function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
                                 <div>
                                     <h3 className="text-md font-medium text-gray-700 mb-2">{t('thirdPartyInjuriesTitle')}</h3>
                                     {(formData.thirdPartyInjuries || []).map((injury, index) => (
-                                        <div key={index} className="bg-gray-50 p-3 rounded-md mb-2 border border-gray-200 space-y-2">
+                                        <div key={index} className="bg-gray-50 p-3 rounded-md mb-2 border dark:border-borderNav border dark:border-borderNav-gray-200 space-y-2">
                                             <div className="flex justify-between items-center">
                                                 <span className="text-sm text-gray-700">{t('thirdPartyInjuryItem', { index: index + 1, name: injury.name || t('newLabel') })}</span>
                                                 <button type="button" onClick={() => removeArrayItem('thirdPartyInjuries', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -511,16 +509,16 @@ function InsuranceAhliaRep({ onClose, isOpen, initialData, reportId }) {
                             </div>
                         )}
                     </div>
-                    <div className="px-6 py-4 flex justify-between items-center border-t border-gray-200 mt-auto">
-                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>
+                    <div className="px-6 py-4 flex justify-between items-center border dark:border-borderNav-t border dark:border-borderNav-gray-200 mt-auto">
+                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-[rgb(255,255,255)] border dark:border-borderNav border dark:border-borderNav-gray-300 hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>
                             {t('backButton')}
                         </button>
                         {currentStep < 6 && (
-                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>
+                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-[rgb(255,255,255)] bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>
                                 {t('nextButton')}
                             </button>
                         )}{currentStep == 6 && (
-                            <button type="submit" className={`px-4 py-2 text-sm text-white bg-green-600 rounded-md shadow-sm hover:bg-green-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>
+                            <button type="submit" className={`px-4 py-2 text-sm text-[rgb(255,255,255)] bg-indigo-700 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>
                                 {isSubmitting ? 'Submitting...' : submitButtonText}
                             </button>
                         )}

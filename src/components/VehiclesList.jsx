@@ -69,14 +69,14 @@ function VehiclesList({ id }) {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border dark:border-borderNav-t-2 border dark:border-borderNav-b-2 border dark:border-borderNav-blue-500"></div>
       </div>
     )
   }
 
   if (error) {
     return (
-      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <div className="bg-red-100 border dark:border-borderNav border dark:border-borderNav-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
         <strong className="font-bold">خطأ! </strong>
         <span className="block sm:inline">{error}</span>
       </div>
@@ -89,7 +89,7 @@ function VehiclesList({ id }) {
         <h2 className="text-xl font-bold">المركبات</h2>
         <Link
           to={`/insured/${id}/add-vehicle`}
-          className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors"
+          className="bg-green-600 text-[rgb(255,255,255)] px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors"
         >
           <Plus size={16} />
           <span>بيانات المركبات</span>
@@ -103,30 +103,30 @@ function VehiclesList({ id }) {
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-200">
+          <table className="min-w-full bg-[rgb(255,255,255)] border dark:border-borderNav border dark:border-borderNav-gray-200">
             <thead className="bg-gray-100">
               <tr>
-                <th className="py-2 px-4 border-b text-right">رقم اللوحة</th>
-                <th className="py-2 px-4 border-b text-right">الموديل</th>
-                <th className="py-2 px-4 border-b text-right">النوع</th>
-                <th className="py-2 px-4 border-b text-right">الملكية</th>
-                <th className="py-2 px-4 border-b text-right">تاريخ انتهاء الرخصة</th>
-                <th className="py-2 px-4 border-b text-right">اللون</th>
-                <th className="py-2 px-4 border-b text-right">السعر</th>
-                <th className="py-2 px-4 border-b text-right">الإجراءات</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">رقم اللوحة</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">الموديل</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">النوع</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">الملكية</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">تاريخ انتهاء الرخصة</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">اللون</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">السعر</th>
+                <th className="py-2 px-4 border dark:border-borderNav-b text-right">الإجراءات</th>
               </tr>
             </thead>
             <tbody>
               {vehicles.map((vehicle) => (
                 <tr key={vehicle._id} className="hover:bg-gray-50">
-                  <td className="py-2 px-4 border-b">{vehicle.plateNumber}</td>
-                  <td className="py-2 px-4 border-b">{vehicle.model}</td>
-                  <td className="py-2 px-4 border-b">{vehicle.type}</td>
-                  <td className="py-2 px-4 border-b">{vehicle.ownership}</td>
-                  <td className="py-2 px-4 border-b">{new Date(vehicle.licenseExpiry).toLocaleDateString("ar-EG")}</td>
-                  <td className="py-2 px-4 border-b">{vehicle.color}</td>
-                  <td className="py-2 px-4 border-b">{vehicle.price}</td>
-                  <td className="py-2 px-4 border-b">
+                  <td className="py-2 px-4 border dark:border-borderNav-b">{vehicle.plateNumber}</td>
+                  <td className="py-2 px-4 border dark:border-borderNav-b">{vehicle.model}</td>
+                  <td className="py-2 px-4 border dark:border-borderNav-b">{vehicle.type}</td>
+                  <td className="py-2 px-4 border dark:border-borderNav-b">{vehicle.ownership}</td>
+                  <td className="py-2 px-4 border dark:border-borderNav-b">{new Date(vehicle.licenseExpiry).toLocaleDateString("ar-EG")}</td>
+                  <td className="py-2 px-4 border dark:border-borderNav-b">{vehicle.color}</td>
+                  <td className="py-2 px-4 border dark:border-borderNav-b">{vehicle.price}</td>
+                  <td className="py-2 px-4 border dark:border-borderNav-b">
                     <div className="flex gap-2">
                       <button
                         onClick={() => handleEditVehicle(vehicle)}
@@ -152,61 +152,61 @@ function VehiclesList({ id }) {
           </table>
           {isEditModalOpen && selectedVehicle && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-              <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+              <div className="bg-[rgb(255,255,255)] p-6 rounded-lg shadow-lg w-96">
                 <h2 className="text-lg font-bold mb-4">تعديل المركبة</h2>
                 <form onSubmit={handleUpdateVehicle}>
                   <input
                     type="text"
                     value={selectedVehicle.plateNumber}
                     onChange={(e) => setSelectedVehicle({ ...selectedVehicle, plateNumber: e.target.value })}
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-2 border dark:border-borderNav rounded mb-2"
                     placeholder="رقم اللوحة"
                   />
                   <input
                     type="text"
                     value={selectedVehicle.model}
                     onChange={(e) => setSelectedVehicle({ ...selectedVehicle, model: e.target.value })}
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-2 border dark:border-borderNav rounded mb-2"
                     placeholder="الموديل"
                   />
                   <input
                     type="text"
                     value={selectedVehicle.ownership}
                     onChange={(e) => setSelectedVehicle({ ...selectedVehicle, ownership: e.target.value })}
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-2 border dark:border-borderNav rounded mb-2"
                     placeholder="الملكية"
                   />
                   <input
                     type="text"
                     value={selectedVehicle.type}
                     onChange={(e) => setSelectedVehicle({ ...selectedVehicle, type: e.target.value })}
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-2 border dark:border-borderNav rounded mb-2"
                     placeholder="النوع"
                   />
                   <input
                     type="text"
                     value={selectedVehicle.color}
                     onChange={(e) => setSelectedVehicle({ ...selectedVehicle, color: e.target.value })}
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-2 border dark:border-borderNav rounded mb-2"
                     placeholder="اللون"
                   />
                   <input
                     type="number"
                     value={selectedVehicle.price}
                     onChange={(e) => setSelectedVehicle({ ...selectedVehicle, price: e.target.value })}
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-2 border dark:border-borderNav rounded mb-2"
                     placeholder="السعر"
                   />
                   <input
                     type="date"
                     value={selectedVehicle.licenseExpiry?.split("T")[0]}
                     onChange={(e) => setSelectedVehicle({ ...selectedVehicle, licenseExpiry: e.target.value })}
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-2 border dark:border-borderNav rounded mb-2"
                     placeholder="تاريخ انتهاء الرخصة"
                   />
                   <div className="flex justify-end gap-2">
-                    <button type="button" onClick={() => setIsEditModalOpen(false)} className="bg-gray-400 text-white px-4 py-2 rounded">إغلاق</button>
-                    <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">حفظ التغييرات</button>
+                    <button type="button" onClick={() => setIsEditModalOpen(false)} className="bg-gray-400 text-[rgb(255,255,255)] px-4 py-2 rounded">إغلاق</button>
+                    <button type="submit" className="bg-indigo-600  text-[rgb(255,255,255)] px-4 py-2 rounded">حفظ التغييرات</button>
                   </div>
                 </form>
 

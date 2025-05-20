@@ -10,8 +10,8 @@ i18n
       en: { translation: en }, // تأكد أن `translation` مرفقة هنا
       ar: { translation: ar }
     },
-    lng: "ar", // اللغة الافتراضية
-    fallbackLng: "ar", // استخدم الإنجليزية كلغة احتياطية إذا لم تكن هناك ترجمة متاحة
+    lng: "en", // اللغة الافتراضية
+    fallbackLng: "en", // استخدم الإنجليزية كلغة احتياطية إذا لم تكن هناك ترجمة متاحة
     interpolation: {
       escapeValue: false // يساعد في تجنب مشاكل عند إدراج HTML داخل النصوص
     }

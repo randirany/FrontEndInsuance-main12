@@ -59,7 +59,7 @@ function CheckDetails() {
 
     if (loading) {
         return (
-            <div className='flex justify-center h-[100vh] items-center'>
+            <div className='flex justify-center h-[100vh] items-center dark:text-dark4 dark:bg-dark2'>
                 <div className="sk-fading-circle ">
                     <div className="sk-circle1 sk-circle"></div>
                     <div className="sk-circle2 sk-circle"></div>
@@ -80,9 +80,9 @@ function CheckDetails() {
     }
 
     return (
-        <div className="navblayout" style={{ padding: '20px' }}>
+        <div className="navblayout" style={{ padding: '20px' ,minHeight:'100vh'}}>
             <div className='mb-2 py-2 '>
-                <div className="bg-white flex p-[20px] rounded-md justify-between items-center ">
+                <div className="bg-[rgb(255,255,255)] flex p-[20px] rounded-md justify-between items-center mt-5  dark:bg-navbarBack dark:text-dark3">
                     <div className="flex gap-[14px]">
                         <NavLink to="/home">Home</NavLink>
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,10 +100,10 @@ function CheckDetails() {
                 </div>
             </div>
 
-            <div className="p-2 md-3 rounded-md bg-white min-h-[50vh]" >
+            <div className="p-2 md-3 rounded-md bg-[rgb(255,255,255)] dark:bg-navbarBack min-h-[50vh]" >
                 {!loading && !error && checks.length === 0 && (
                     <div className="flex justify-center my-2">
-                        <div className="  border-l-4 border-[#5750F1] bg-[#5750F1]/5  p-4 rounded-md shadow-md w-full mx-5">
+                        <div className="  border dark:border-l-4  dark:border-borderNav bg-[#5750F1]/5  p-4 rounded-md shadow-md w-full mx-5">
                             <p className="font-medium">No check details found for this insurance.</p>
                         </div>
                     </div>
@@ -111,14 +111,14 @@ function CheckDetails() {
 
 
                 {!error && checks.length > 0 && (
-                    <div className="bg-white rounded-lg p-2  min-h-[50vh]">
+                    <div className="bg-[rgb(255,255,255)] rounded-lg p-2  min-h-[50vh]">
                         {checks.map((check, index) => (
                             <div key={check._id || index}>
-                                <div className="flex items-start py-4 px-2 my-2 hover:bg-gray-100 rounded-lg shadow-sm">
+                                <div className="flex items-start py-4 px-2 my-2 hover:bg-gray-100 rounded-lg shadow-sm dark:bg-dark2">
                                     <div className="mr-4 mt-1">
                                         {check.checkImage ? (
                                             <div
-                                                className="relative w-24 h-24 cursor-pointer bg-gray-200 rounded-md overflow-hidden"
+                                                className="relative w-24 h-24 cursor-pointer bg-gray-200 rounded-md overflow-hidden  dark:bg-dark2"
                                                 title="View Image"
                                             >
                                                 <img
@@ -176,7 +176,7 @@ function CheckDetails() {
                                     )}
                                 </div>
                                 {index < checks.length - 1 && (
-                                    <div className="border-b border-gray-200 mx-12"></div>
+                                    <div className=" dark:border-borderNav border-b border dark:border-borderNav-gray-200 mx-12"></div>
                                 )}
                             </div>
                         ))}

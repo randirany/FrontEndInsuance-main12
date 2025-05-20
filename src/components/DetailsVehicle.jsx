@@ -33,8 +33,8 @@ function DetailsVehicle() {
 
 
     return (
-        <div className="navblayout">
-            <div className="bg-white flex p-[22px] rounded-md justify-between items-center">
+        <div className="navblayout py-1">
+            <div className="bg-[rgb(255,255,255)] flex p-[22px] rounded-md justify-between items-center dark:bg-navbarBack mt-4 dark:text-dark3">
                 <div className="flex gap-[14px]">
                     <NavLink to="/home" className="hover:text-[#5750F1]">Home</NavLink>
                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,39 +80,39 @@ function DetailsVehicle() {
             </div>
 
             <div className="flex gap-3 py-4">
-                <div className="w-64 rounded-lg bg-white p-6 shadow-sm">
+                <div className="w-64 rounded-lg bg-[rgb(255,255,255)]  dark:bg-navbarBack  p-6 shadow-sm">
                     <div className="">
-                        <h2 className="mb-4 text-lg font-semibold text-gray-900 text-[30px] ">Customer Info</h2>
+                        <h2 className="mb-4 text-lg font-semibold text-gray-900 text-[30px]  dark:text-[rgb(255,255,255)]">Customer Info</h2>
 
                         <div className="space-y-4">
                             <div>
                                 <label className="text-sm text-gray-500">Name</label>
-                                <p className="text-gray-900">{customerData.name}</p>
+                                <p className="text-gray-900 dark:text-[rgb(255,255,255)]">{customerData.name}</p>
                             </div>
 
                             <div>
                                 <label className="text-sm text-gray-500">Mobile</label>
-                                <p className="text-gray-900">{customerData.mobile}</p>
+                                <p className="text-gray-900 dark:text-[rgb(255,255,255)]">{customerData.mobile}</p>
                             </div>
 
                             <div>
                                 <label className="text-sm text-gray-500">Identity</label>
-                                <p className="text-gray-900">{customerData.identity}</p>
+                                <p className="text-gray-900 dark:text-[rgb(255,255,255)]">{customerData.identity}</p>
                             </div>
 
                             <div>
                                 <label className="text-sm text-gray-500">Age</label>
-                                <p className="text-gray-900">{customerData.age}</p>
+                                <p className="text-gray-900 dark:text-[rgb(255,255,255)]">{customerData.age}</p>
                             </div>
 
                             <div>
                                 <label className="text-sm text-gray-500">Join Date</label>
-                                <p className="text-gray-900">{customerData.joinDate}</p>
+                                <p className="text-gray-900 dark:text-[rgb(255,255,255)]">{customerData.joinDate}</p>
                             </div>
 
                             <div>
                                 <label className="text-sm text-gray-500">Customer Source</label>
-                                <p className="text-gray-900">{customerData.customerSource}</p>
+                                <p className="text-gray-900 dark:text-[rgb(255,255,255)]">{customerData.customerSource}</p>
                             </div>
 
                             <div>
@@ -125,7 +125,7 @@ function DetailsVehicle() {
 
                 <div className="max-w-[calc(100%-17rem)]">
                     {/* Attachments Section */}
-                    <div className="mb-6 rounded-lg bg-white p-3 shadow-sm">
+                    <div className="mb-6 rounded-lg bg-[rgb(255,255,255)]  dark:bg-navbarBack  p-3 shadow-sm">
                         <div>
 
                         </div>
@@ -133,12 +133,12 @@ function DetailsVehicle() {
                             {/* <h2 className="text-lg font-semibold text-gray-900">Attachments</h2> */}
 
                             <button
-                                className="rounded-lg bg-[#5750F1] px-4 py-2 text-sm font-medium text-white hover:bg-[#5750F1]/90"
+                                className="rounded-lg bg-[#5750F1] px-4 py-2 text-sm font-medium text-[rgb(255,255,255)] hover:bg-[#5750F1]/90"
                             >
                                 Update Vehicle Details
                             </button>
                             <button
-                                className="rounded-lg bg-[#5750F1] px-4 py-2 text-sm font-medium text-white hover:bg-[#5750F1]/90"
+                                className="rounded-lg bg-[#5750F1] px-4 py-2 text-sm font-medium text-[rgb(255,255,255)] hover:bg-[#5750F1]/90"
                             >
                                 Delete Vehicle Details
                             </button>  </div>
@@ -147,7 +147,7 @@ function DetailsVehicle() {
 
 
                             <div className="max-w-[230px] ">
-                                <div className=" p-2 border-2 border-[#C3CEF6] rounded-[8px] h-[100%]">
+                                <div className=" p-2 border-2  dark:border-borderNav-[#C3CEF6] rounded-[8px] h-[100%]">
                                     {/* <img src={`${vehicle}`} /> */}
                                     <img src={`${car}`} alt="" />
                                     <div className="relative w-[146px] ">
@@ -158,63 +158,63 @@ function DetailsVehicle() {
 
                             </div>
 
-                            <div className="flex flex-wrap gap-3  border-2 border-[#C3CEF6] justify-center px-[3px] py-[10px]  rounded-[8px] " >
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px]">
+                            <div className="flex flex-wrap gap-3     dark:border-borderNav-[#C3CEF6] justify-center px-[3px] py-[10px]  rounded-[8px] " >
+                                <div className="w-[85px] h-[95px]   dark:border-borderNav-[#C3CEF6] rounded-[8px]">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] px-[4px]">
                                         Vehicle Name
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px]  text-center">
+                                <div className="w-[85px] h-[95px]  dark:border-borderNav-2  dark:border-borderNav-[#C3CEF6] rounded-[8px]  text-center">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[8px]">
                                         License End Date
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
 
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px]  text-center">
+                                <div className="w-[85px] h-[95px]  dark:border-borderNav-2  dark:border-borderNav-[#C3CEF6] rounded-[8px]  text-center">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] ">
                                         Vehicle Number
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
 
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px] text-center">
+                                <div className="w-[85px] h-[95px]  dark:border-borderNav-2  dark:border-borderNav-[#C3CEF6] rounded-[8px] text-center">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] px-[4px]">
                                         Vehicle Name
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px] text-center">
+                                <div className="w-[85px] h-[95px]     rounded-[8px] text-center">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] ">
                                         Vehicle Model                                    </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px] text-center">
+                                <div className="w-[85px] h-[95px]    rounded-[8px] text-center">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] ">
                                         Vehicle Name
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[5px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px] text-center">
+                                <div className="w-[85px] h-[95px]   rounded-[8px] text-center">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] ">
                                         Vehicle Name
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px]">
+                                <div className="w-[85px] h-[95px]  rounded-[8px]">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] px-[4px]">
                                         Vehicle Name
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px]">
+                                <div className="w-[85px] h-[95px]   rounded-[8px]">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] px-[4px]">
                                         Vehicle Name
                                     </p>
                                     <p className="text-[#808080] text-[12px] rounded-b-[8px] py-[10px] px-[3px] text-center">Work Vehicle</p>
                                 </div>
-                                <div className="w-[85px] h-[95px] border-2 border-[#C3CEF6] rounded-[8px]">
+                                <div className="w-[85px] h-[95px]  rounded-[8px]">
                                     <p className="bg-[#C3CEF6] rounded-b-[8px] text-[12px] py-[15px] px-[4px]">
                                         Vehicle Name
                                     </p>
@@ -225,10 +225,10 @@ function DetailsVehicle() {
 
                     </div>
 
-                    <div className="rounded-lg bg-white p-6 shadow-sm mb-6">
+                    <div className="rounded-lg bg-[rgb(255,255,255)] p-6 shadow-sm mb-6  dark:bg-navbarBack ">
                         <div className="mb-4 flex items-center justify-center">
-                            <h2 className="text-[24px] font-semibold text-gray-900">Payments Summary</h2>
-                            {/* <button className="rounded-lg bg-[#5750F1] px-4 py-2 text-sm font-medium text-white hover:bg-[#5750F1]/90" onClick={() => { setAddCustomerOpen(true); console.log('open') }}>
+                            <h2 className="text-[24px] font-semibold text-gray-900 dark:text-[rgb(255,255,255)]">Payments Summary</h2>
+                            {/* <button className="rounded-lg bg-[#5750F1] px-4 py-2 text-sm font-medium text-[rgb(255,255,255)] hover:bg-[#5750F1]/90" onClick={() => { setAddCustomerOpen(true); console.log('open') }}>
                                 Add New Vehicle
                             </button> */}
                         </div>
@@ -251,9 +251,9 @@ function DetailsVehicle() {
                         </div>
                     </div>
 
-                    <div className="rounded-lg bg-white p-6 shadow-sm">
+                    <div className="rounded-lg bg-[rgb(255,255,255)] p-6 shadow-sm  dark:bg-navbarBack ">
                         <div className="mb-4 flex items-center justify-center">
-                            <h2 className="text-[24px] font-semibold text-gray-900">Actions </h2>
+                            <h2 className="text-[24px] font-semibold text-gray-900 dark:text-[rgb(255,255,255)]">Actions </h2>
                         </div>
 
                         <div className="relative ">
@@ -262,7 +262,7 @@ function DetailsVehicle() {
                                 <a className="bg-secnodColor rounded-[8px] text-center py-[10px] cursor-pointer">
                                     <p>New Insurance</p>
                                 </a>
-                                <a className={` rounded-[8px] text-center py-[10px] cursor-pointer ${slug == 'All_insurances' ? "bg-[#5750F1] text-white" : "bg-secnodColor"}`} onClick={() => { setSlug('All_insurances') }}>
+                                <a className={` rounded-[8px] text-center py-[10px] cursor-pointer ${slug == 'All_insurances' ? "bg-[#5750F1] text-[rgb(255,255,255)]" : "bg-secnodColor"}`} onClick={() => { setSlug('All_insurances') }}>
                                     <p>All Insurances </p>
                                 </a>
                                 <a className="bg-secnodColor rounded-[8px] text-center py-[10px] cursor-pointer" onClick={() => {
@@ -272,7 +272,7 @@ function DetailsVehicle() {
                                 }}>
                                     <p>Accident Report </p>
                                 </a>
-                                <a className={` rounded-[8px] text-center py-[10px] cursor-pointer ${slug == 'Payments_receipts' ? "bg-[#5750F1] text-white" : "bg-secnodColor"}`} onClick={() => { setSlug('Payments_receipts'); console.log(slug) }}>
+                                <a className={` rounded-[8px] text-center py-[10px] cursor-pointer ${slug == 'Payments_receipts' ? "bg-[#5750F1] text-[rgb(255,255,255)]" : "bg-secnodColor"}`} onClick={() => { setSlug('Payments_receipts'); console.log(slug) }}>
                                     <p>Payments Receipts </p>
                                 </a>
                             </div>
@@ -280,16 +280,16 @@ function DetailsVehicle() {
                     </div>
                 </div>
             </div>
-            {/* <div className="mb-6 rounded-lg bg-white p-3 shadow-sm">
+            {/* <div className="mb-6 rounded-lg bg-[rgb(255,255,255)] p-3 shadow-sm">
                 <div className="mb-4 flex items-center gap-2 justify-center">
-                    <h2 className="text-[24px] font-semibold text-gray-900 ">Payments Reciepts </h2>
+                    <h2 className="text-[24px] font-semibold text-gray-900 dark:text-[rgb(255,255,255)] ">Payments Reciepts </h2>
                 </div>
 
 
                 <div className="relative swiper-container">
                     <button
                         ref={prevRef}
-                        className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white p-2 shadow-md"
+                        className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-[rgb(255,255,255)] p-2 shadow-md"
                     >
                         <ChevronLeft className="h-5 w-5 text-gray-600" />
                     </button>
@@ -314,7 +314,7 @@ function DetailsVehicle() {
                         >
                             {[...Array(7)].map((_, index) => (
                                 <SwiperSlide key={index}>
-                                    <div className=" rounded-lg border border-gray-200 p-4 w-[270px]">
+                                    <div className=" rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 p-4 w-[270px]">
                                         <div className="h-[80px] w-[80px] overflow-hidden mb-[22px]">
                                             <img
                                                 src={logo}
@@ -333,7 +333,7 @@ function DetailsVehicle() {
 
                     <button
                         ref={nextRef}
-                        className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white p-2 shadow-md"
+                        className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-[rgb(255,255,255)] p-2 shadow-md"
                     >
                         <ChevronRight className="h-5 w-5 text-gray-600" />
                     </button>
@@ -342,16 +342,16 @@ function DetailsVehicle() {
             </div> */}
             {
                 slug == 'All_insurances' && <>
-                    <div className="mb-6 rounded-lg bg-white p-3 shadow-sm">
+                    <div className="mb-6 rounded-lg bg-[rgb(255,255,255)] p-3 shadow-sm">
                         <div className="mb-4 flex items-center gap-2 justify-center">
-                            <h2 className="text-[24px] font-semibold text-gray-900 ">All Insurance </h2>
+                            <h2 className="text-[24px] font-semibold text-gray-900 dark:text-[rgb(255,255,255)] ">All Insurance </h2>
                         </div>
 
 
                         <div className="relative swiper-container">
                             <button
                                 ref={prevRef}
-                                className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white p-2 shadow-md"
+                                className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-[rgb(255,255,255)] p-2 shadow-md"
                             >
                                 <ChevronLeft className="h-5 w-5 text-gray-600" />
                             </button>
@@ -375,7 +375,7 @@ function DetailsVehicle() {
                                     className="attachments-swiper"
                                 >
                                     <SwiperSlide >
-                                        <div className=" rounded-lg border border-gray-200 p-4 w-[270px]">
+                                        <div className=" rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 p-4 w-[270px]">
                                             <div className="h-[80px] w-[80px] overflow-hidden mb-[22px]">
                                                 <img
                                                     src={logo}
@@ -389,7 +389,7 @@ function DetailsVehicle() {
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide >
-                                        <div className=" rounded-lg border border-gray-200 p-4 w-[270px]">
+                                        <div className=" rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 p-4 w-[270px]">
                                             <div className="h-[80px] w-[80px] overflow-hidden mb-[22px]">
                                                 <img
                                                     src={logo}
@@ -403,7 +403,7 @@ function DetailsVehicle() {
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide >
-                                        <div className=" rounded-lg border border-gray-200 p-4 w-[270px]">
+                                        <div className=" rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 p-4 w-[270px]">
                                             <div className="h-[80px] w-[80px] overflow-hidden mb-[22px]">
                                                 <img
                                                     src={logo}
@@ -417,7 +417,7 @@ function DetailsVehicle() {
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide >
-                                        <div className=" rounded-lg border border-gray-200 p-4 w-[270px]">
+                                        <div className=" rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 p-4 w-[270px]">
                                             <div className="h-[80px] w-[80px] overflow-hidden mb-[22px]">
                                                 <img
                                                     src={logo}
@@ -431,7 +431,7 @@ function DetailsVehicle() {
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide >
-                                        <div className=" rounded-lg border border-gray-200 p-4 w-[270px]">
+                                        <div className=" rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 p-4 w-[270px]">
                                             <div className="h-[80px] w-[80px] overflow-hidden mb-[22px]">
                                                 <img
                                                     src={logo}
@@ -449,7 +449,7 @@ function DetailsVehicle() {
 
                             <button
                                 ref={nextRef}
-                                className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white p-2 shadow-md"
+                                className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-[rgb(255,255,255)] p-2 shadow-md"
                             >
                                 <ChevronRight className="h-5 w-5 text-gray-600" />
                             </button>
@@ -461,16 +461,16 @@ function DetailsVehicle() {
             }
             {
                 slug == 'Payments_receipts' && <>
-                    <div className="mb-6 rounded-lg bg-white p-3 shadow-sm">
+                    <div className="mb-6 rounded-lg bg-[rgb(255,255,255)] p-3 shadow-sm">
                         <div className="mb-4 flex items-center gap-2 justify-center">
-                            <h2 className="text-[24px] font-semibold text-gray-900 ">Payments Reciepts </h2>
+                            <h2 className="text-[24px] font-semibold text-gray-900 dark:text-[rgb(255,255,255)] ">Payments Reciepts </h2>
                         </div>
 
 
                         <div className="relative swiper-container">
                             <button
                                 ref={prevRef}
-                                className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white p-2 shadow-md"
+                                className="custom-swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-[rgb(255,255,255)] p-2 shadow-md"
                             >
                                 <ChevronLeft className="h-5 w-5 text-gray-600" />
                             </button>
@@ -495,7 +495,7 @@ function DetailsVehicle() {
                                 >
                                     {[...Array(7)].map((_, index) => (
                                         <SwiperSlide key={index}>
-                                            <div className=" rounded-lg border border-gray-200 p-4 w-[270px]">
+                                            <div className=" rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 p-4 w-[270px]">
                                                 <div className="h-[80px] w-[80px] overflow-hidden mb-[22px]">
                                                     <img
                                                         src={logo}
@@ -514,7 +514,7 @@ function DetailsVehicle() {
 
                             <button
                                 ref={nextRef}
-                                className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white p-2 shadow-md"
+                                className="custom-swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full bg-[rgb(255,255,255)] p-2 shadow-md"
                             >
                                 <ChevronRight className="h-5 w-5 text-gray-600" />
                             </button>

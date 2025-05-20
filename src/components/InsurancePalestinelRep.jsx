@@ -315,7 +315,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
                 {[1, 2, 3, 4, 5, 6, 7].map((step) => ( 
 
 <div key={step} className="flex flex-col items-center text-center flex-1 px-1">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-xs font-medium ${currentStep >= step ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
+                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-xs font-medium ${currentStep >= step ? 'bg-indigo-600 text-[rgb(255,255,255)]' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
                         <span className="text-[10px] leading-tight mt-1 text-gray-600">
                             {step === 1 && t('palestine.step1Indicator')}
                             {step === 2 && t('palestine.step2Indicator')}
@@ -343,7 +343,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
                         name={name}
                         checked={Boolean(value)}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                        className="h-4 w-4 text-indigo-600 b rounded focus:ring-indigo-500"
                     />
                     <label htmlFor={inputId} className="ml-2 block text-sm font-medium text-gray-700">
                         {t(label)} {required && <span className="text-red-500">*</span>}
@@ -354,14 +354,14 @@ function InsurancePalestineRep({ onClose, isOpen }) {
 
         return (
             <div className="mb-2">
-                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700">{t(label)} {required && <span className="text-red-500">*</span>}</label>
+                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]">{t(label)} {required && <span className="text-red-500">*</span>}</label>
                 {type === "select" ? (
                     <select
                         id={inputId}
                         name={name}
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2  rounded-md text-sm"
                         required={required}
                     >
                         <option value="">{options && options.find(o=>o.value==='') ? t(options.find(o=>o.value==='').label) : t("selectDefault")}</option>
@@ -374,7 +374,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
                         rows="2"
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 rounded-md text-sm"
                         required={required}
                     ></textarea>
                 ) : (
@@ -384,7 +384,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
                         name={name}
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 rounded-md text-sm"
                         required={required}
                         step={type === "number" ? "any" : undefined}
                     />
@@ -429,7 +429,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
             </div>
             <div>
                 <h4 className="text-md font-medium text-gray-600 mb-1">{t("palestine.licenseInfoTitle")}</h4>
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-3 border rounded-md bg-gray-50">
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-3  rounded-md bg-gray-50">
                     {renderCommonInput("palestine.licenseNumberLabel", "number", formData.driverInfo.license.number, "text", false, "driverInfo", "license", null, null, null, "number")}
                     {renderCommonInput("palestine.licenseTypeLabel", "type", formData.driverInfo.license.type, "text", false, "driverInfo", "license", null, null, null, "type")}
                     {renderCommonInput("palestine.licenseIssueDateLabel", "issueDate", formData.driverInfo.license.issueDate, "date", false, "driverInfo", "license", null, null, null, "issueDate")}
@@ -482,7 +482,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
             <div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">{t("palestine.injuriesTitle")}</h3>
                 {(formData.injuries || []).map((injury, index) => (
-                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border border-gray-200">
+                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border-gray-200">
                         <div className="flex justify-between items-center mb-2">
                             <h4 className="text-md font-medium text-gray-600">{t('palestine.injuryItemTitle', { index: index + 1 })}</h4>
                             <button type="button" onClick={() => removeArrayItem('injuries', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -506,7 +506,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
             <div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">{t("palestine.witnessesTitle")}</h3>
                 {(formData.witnesses || []).map((witness, index) => (
-                     <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border border-gray-200">
+                     <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 ">
                         <div className="flex justify-between items-center mb-2">
                             <h4 className="text-md font-medium text-gray-600">{t('palestine.witnessItemTitle', { index: index + 1 })}</h4>
                             <button type="button" onClick={() => removeArrayItem('witnesses', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -531,7 +531,7 @@ function InsurancePalestineRep({ onClose, isOpen }) {
             <div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">{t("palestine.passengersTitle")}</h3>
                  {(formData.passengers || []).map((passenger, index) => (
-                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border border-gray-200">
+                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3   ">
                         <div className="flex justify-between items-center mb-2">
                             <h4 className="text-md font-medium text-gray-600">{t('palestine.passengerItemTitle', { index: index + 1 })}</h4>
                             <button type="button" onClick={() => removeArrayItem('passengers', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -559,15 +559,15 @@ function InsurancePalestineRep({ onClose, isOpen }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-y-auto py-4">
-            <div className="w-full max-w-[1000px] bg-white rounded-lg shadow-lg">
-                <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200">
-                    <h2 className="text-lg font-semibold text-gray-800">{t('palestine.modalTitle')}</h2>
+            <div className="w-full max-w-[900px] bg-[rgb(255,255,255)] dark:bg-navbarBack dark:text-dark4 rounded-lg shadow-lg">
+                <div className="flex items-center justify-between px-6 py-3 border-b  dark:border-gray-200">
+                    <h2 className="text-lg font-semibold text-gray-700  dark:text-[rgb(255,255,255)]">{t('palestine.modalTitle')}</h2>
                     <button onClick={onClose} className="p-1 rounded-full text-gray-500 hover:bg-gray-100" disabled={isSubmitting}><X className="w-5 h-5" /></button>
                 </div>
                 {renderStepIndicator()}
                 <form onSubmit={handleSubmit} className="rounded-md">
-                    <div className="flex items-center justify-between pb-2 border-b border-gray-300 mx-6 mb-3">
-                        <p className="text-md font-semibold text-gray-700">{getStepTitle()}</p>
+                    <div className="flex items-center justify-between pb-2 border-b  border-gray-300 mx-6 mb-3">
+                        <p className="text-md font-semibold text-gray-700 dark:text-[rgb(255,255,255)]">{getStepTitle()}</p>
                     </div>
                     <div className="px-6 pb-6 max-h-[calc(100vh-330px)] overflow-y-auto space-y-4">
                         {currentStep === 1 && renderAgentPolicyInfo()}
@@ -578,12 +578,12 @@ function InsurancePalestineRep({ onClose, isOpen }) {
                         {currentStep === 6 && renderInjuriesAndWitnesses()}
                         {currentStep === 7 && renderPassengersAndAdditional()}
                     </div>
-                    <div className="px-6 py-3 flex justify-between items-center border-t border-gray-200 mt-auto">
-                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>{t('backButton')}</button>
+                    <div className="px-6 py-3 flex justify-between items-center border-t   mt-auto">
+                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-[rgb(255,255,255)]   hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>{t('backButton')}</button>
                         {currentStep < 7 ? (
-                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{t('nextButton')}</button>
+                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-[rgb(255,255,255)] bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{t('nextButton')}</button>
                         ) : (
-                            <button type="submit" className={`px-4 py-2 text-sm text-white bg-green-600 rounded-md shadow-sm hover:bg-green-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : t('submitButton')}</button>
+                            <button type="submit" className={`px-4 py-2 text-sm text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : t('submitButton')}</button>
                         )}
                     </div>
                 </form>

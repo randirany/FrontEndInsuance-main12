@@ -6,7 +6,7 @@ import { useState } from "react"
 import * as Yup from "yup"
 import { Bounce, toast, ToastContainer } from "react-toastify"
 function AddVehicle() {
-    const { id } = useParams() // Get the insured person's ID from URL
+    const { id } = useParams() 
     console.log(id)
     const [loading, setLoading] = useState(false)
     const [imagePreview, setImagePreview] = useState(null)
@@ -128,21 +128,21 @@ function AddVehicle() {
 
     return (
         <div className="container p-4">
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-[rgb(255,255,255)] rounded-lg shadow-md p-6">
                 <h2 className="text-2xl font-bold mb-6 text-center">إضافة مركبة جديدة</h2>
 
                 <form onSubmit={formik.handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* رقم اللوحة */}
                         <div>
-                            <label htmlFor="plateNumber" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="plateNumber" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 رقم اللوحة
                             </label>
                             <input
                                 type="number"
                                 id="plateNumber"
                                 name="plateNumber"
-                                className={`w-full p-1 border rounded-md ${formik.touched.plateNumber && formik.errors.plateNumber ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.plateNumber && formik.errors.plateNumber ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -155,14 +155,14 @@ function AddVehicle() {
 
                         {/* الموديل */}
                         <div>
-                            <label htmlFor="model" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="model" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 الموديل
                             </label>
                             <input
                                 type="text"
                                 id="model"
                                 name="model"
-                                className={`w-full p-1 border rounded-md ${formik.touched.model && formik.errors.model ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.model && formik.errors.model ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -175,14 +175,14 @@ function AddVehicle() {
 
                         {/* النوع */}
                         <div>
-                            <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="type" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 النوع
                             </label>
                             <input
                                 type="text"
                                 id="type"
                                 name="type"
-                                className={`w-full p-1 border rounded-md ${formik.touched.type && formik.errors.type ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.type && formik.errors.type ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -195,14 +195,14 @@ function AddVehicle() {
 
                         {/* الملكية */}
                         <div>
-                            <label htmlFor="ownership" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="ownership" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 الملكية
                             </label>
                             <input
                                 type="text"
                                 id="ownership"
                                 name="ownership"
-                                className={`w-full p-1 border rounded-md ${formik.touched.ownership && formik.errors.ownership ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.ownership && formik.errors.ownership ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -215,14 +215,14 @@ function AddVehicle() {
 
                         {/* رقم الموديل */}
                         <div>
-                            <label htmlFor="modelNumber" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="modelNumber" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 رقم الموديل
                             </label>
                             <input
                                 type="text"
                                 id="modelNumber"
                                 name="modelNumber"
-                                className={`w-full p-1 border rounded-md ${formik.touched.modelNumber && formik.errors.modelNumber ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.modelNumber && formik.errors.modelNumber ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -235,14 +235,14 @@ function AddVehicle() {
 
                         {/* تاريخ انتهاء الرخصة */}
                         <div>
-                            <label htmlFor="licenseExpiry" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="licenseExpiry" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 تاريخ انتهاء الرخصة
                             </label>
                             <input
                                 type="date"
                                 id="licenseExpiry"
                                 name="licenseExpiry"
-                                className={`w-full p-1 border rounded-md ${formik.touched.licenseExpiry && formik.errors.licenseExpiry ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.licenseExpiry && formik.errors.licenseExpiry ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -255,14 +255,14 @@ function AddVehicle() {
 
                         {/* تاريخ آخر فحص */}
                         <div>
-                            <label htmlFor="lastTest" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="lastTest" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 تاريخ آخر فحص
                             </label>
                             <input
                                 type="date"
                                 id="lastTest"
                                 name="lastTest"
-                                className={`w-full p-1 border rounded-md ${formik.touched.lastTest && formik.errors.lastTest ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.lastTest && formik.errors.lastTest ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -275,14 +275,14 @@ function AddVehicle() {
 
                         {/* اللون */}
                         <div>
-                            <label htmlFor="color" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="color" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 اللون
                             </label>
                             <input
                                 type="text"
                                 id="color"
                                 name="color"
-                                className={`w-full p-1 border rounded-md ${formik.touched.color && formik.errors.color ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.color && formik.errors.color ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -295,14 +295,14 @@ function AddVehicle() {
 
                         {/* السعر */}
                         <div>
-                            <label htmlFor="price" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="price" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 السعر
                             </label>
                             <input
                                 type="number"
                                 id="price"
                                 name="price"
-                                className={`w-full p-1 border rounded-md ${formik.touched.price && formik.errors.price ? "border-red-500" : "border-gray-300"
+                                className={`w-full p-1 border dark:border-borderNav rounded-md ${formik.touched.price && formik.errors.price ? "border dark:border-borderNav-red-500" : "border dark:border-borderNav-gray-300"
                                     }`}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
@@ -315,7 +315,7 @@ function AddVehicle() {
 
                         {/* صورة المركبة */}
                         <div>
-                            <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-1">
+                            <label htmlFor="image" className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]mb-1">
                                 صورة المركبة
                             </label>
                             <input
@@ -323,7 +323,7 @@ function AddVehicle() {
                                 id="image"
                                 name="image"
                                 accept="image/*"
-                                className="w-full p-1 border border-gray-300 rounded-md"
+                                className="w-full p-1 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md"
                                 onChange={handleImageChange}
                             />
                             {imagePreview && (
@@ -343,14 +343,14 @@ function AddVehicle() {
                         <button
                             type="button"
                             onClick={() => navigate(`/insured/${id}`)}
-                            className="px-6 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                            className="px-6 py-2 bg-gray-500 text-[rgb(255,255,255)] rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                         >
                             إلغاء
                         </button>
                         <button
                             type="submit"
                             disabled={loading}
-                            className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+                            className="px-6 py-2 bg-indigo-600  text-[rgb(255,255,255)] rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
                         >
                             {loading ? "جاري الإضافة..." : "إضافة المركبة"}
                         </button>

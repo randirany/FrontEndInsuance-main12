@@ -350,7 +350,7 @@ function InsuranceMashreqRep({ onClose, isOpen }) {
             <div className="flex justify-between items-center">
                 {[1, 2, 3, 4, 5, 6].map((step) => (
                     <div key={step} className="flex flex-col items-center text-center flex-1">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium ${currentStep >= step ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
+                        <div className={` w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium ${currentStep >= step ? 'bg-indigo-600 text-[rgb(255,255,255)]' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
                         <span className="text-xs mt-1 text-gray-600">
                             {step === 1 && t('mashreq.step1Indicator')}
                             {step === 2 && t('mashreq.step2Indicator')}
@@ -365,9 +365,9 @@ function InsuranceMashreqRep({ onClose, isOpen }) {
         </div>
     );
 
-    const renderCommonInput = (label, name, value, onChange, type = "text", required = false, options = null, section = null, subField = null, arrayName = null, index = null, itemField = null) => (
+     const renderCommonInput = (label, name, value, onChange, type = "text", required = false, options = null, section = null, subField = null, arrayName = null, index = null, itemField = null) => (
         <div>
-            <label className="block text-sm font-medium text-gray-700">{t(label)} {required && <span className="text-red-500">*</span>}</label>
+            <label className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]">{t(label)} {required && <span className="text-red-500">*</span>}</label>
             {type === "select" ? (
                 <select name={name} value={value} onChange={(e) => handleChange(e, section, subField || name, arrayName, index, itemField || name)} className="mt-1 w-full p-2 border border-gray-300 rounded-md" required={required}>
                     {options.map(opt => <option key={opt.value} value={opt.value}>{t(opt.label)}</option>)}
@@ -450,7 +450,7 @@ function InsuranceMashreqRep({ onClose, isOpen }) {
         <div className="space-y-6">
             {/* Other Vehicles */}
             <div>
-                <h3 className="text-md font-medium text-gray-700 mb-2">{t('mashreq.otherVehiclesTitle')}</h3>
+                <h3 className="text-md font-medium text-gray-700 mb-2  dark:text-[rgb(255,255,255)]">{t('mashreq.otherVehiclesTitle')}</h3>
                 {formData.otherVehicles.map((vehicle, index) => (
                     <div key={index} className="bg-gray-100 p-4 rounded-md mb-3 border border-gray-300 space-y-3">
                         <div className="flex justify-between items-center">
@@ -482,7 +482,7 @@ function InsuranceMashreqRep({ onClose, isOpen }) {
             {renderCommonInput("mashreq.vehicleDamagesOverallLabel", "vehicleDamages", formData.vehicleDamages, handleChange, "textarea")}
 
             <div>
-                <h3 className="text-md font-medium text-gray-700 mb-2">{t('mashreq.personalInjuriesTitle')}</h3>
+                <h3 className="text-md font-medium text-gray-700 mb-2  dark:text-[rgb(255,255,255)]">{t('mashreq.personalInjuriesTitle')}</h3>
                 {formData.personalInjuries.map((injury, index) => (
                     <div key={index} className="bg-gray-100 p-4 rounded-md mb-3 border border-gray-300 space-y-3">
                         <div className="flex justify-between items-center">
@@ -510,7 +510,7 @@ function InsuranceMashreqRep({ onClose, isOpen }) {
                 { title: "mashreq.externalWitnessesTitle", arrayName: "externalWitnesses", buttonLabel: "mashreq.addExternalWitnessButton", itemLabel: "mashreq.externalWitnessItem", placeholder: "mashreq.witnessNamePlaceholder" }
             ].map(section => (
                 <div key={section.arrayName}>
-                    <h3 className="text-md font-medium text-gray-700 mb-2">{t(section.title)}</h3>
+                    <h3 className="text-md font-medium text-gray-700 mb-2  dark:text-[rgb(255,255,255)]">{t(section.title)}</h3>
                     {formData[section.arrayName].map((name, index) => (
                         <div key={index} className="flex items-center bg-gray-50 p-2 rounded-md mb-2 border border-gray-200">
                             <input
@@ -548,15 +548,15 @@ function InsuranceMashreqRep({ onClose, isOpen }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-y-auto py-4">
-            <div className="w-full max-w-[900px] bg-white rounded-lg shadow-lg"> {/* Slightly wider for more complex form */}
+            <div className="w-full max-w-[900px] bg-[rgb(255,255,255)] dark:bg-navbarBack dark:text-dark4 rounded-lg shadow-lg"> {/* Slightly wider for more complex form */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-                    <h2 className="text-xl font-semibold text-gray-800">{t('mashreq.modalTitle')}</h2>
+                    <h2 className="text-xl font-semibold text-gray-800 dark:text-[rgb(255,255,255)]">{t('mashreq.modalTitle')}</h2>
                     <button onClick={onClose} className="p-1 rounded-full text-gray-500 hover:bg-gray-100" disabled={isSubmitting}><X className="w-5 h-5" /></button>
                 </div>
                 {renderStepIndicator()}
                 <form onSubmit={handleSubmit} className="rounded-md">
                     <div className="flex items-center justify-between pb-2 border-b border-gray-300 mx-6 mb-4">
-                        <p className="text-lg font-semibold text-gray-700">{getStepTitle()}</p>
+                        <p className="text-lg font-semibold text-gray-700  dark:text-[rgb(255,255,255)]">{getStepTitle()}</p>
                     </div>
                     <div className="px-6 pb-6 max-h-[calc(100vh-340px)] overflow-y-auto space-y-4"> {/* Adjusted max-h */}
                         {currentStep === 1 && renderOfficePolicyInfo()}

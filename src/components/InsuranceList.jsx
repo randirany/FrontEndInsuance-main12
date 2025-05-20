@@ -178,7 +178,7 @@ function InsuranceList() {
 
     if (!customerData._id && !selectedVehicleDetails) {
         return (
-            <div className='flex justify-center h-[100vh] items-center'>
+            <div className='flex justify-center h-[100vh] items-center dark:text-dark4 dark:bg-dark2'>
                 <div className="sk-fading-circle ">
                     <div className="sk-circle1 sk-circle"></div>
                     <div className="sk-circle2 sk-circle"></div>
@@ -198,11 +198,10 @@ function InsuranceList() {
         );
     }
 
-
     return (
-        <div className="navblayout">
-            <div className="bg-white flex p-[22px] rounded-md justify-between items-center">
-                <div className="bg-white flex rounded-md justify-between items-center">
+        <div className="navblayout py-1">
+            <div className="bg-[rgb(255,255,255)] flex p-[22px] rounded-md justify-between items-center dark:bg-navbarBack mt-4">
+                <div className="dark:text-dark3 flex rounded-md justify-between items-center">
                     <div className="flex gap-[14px]">
                         <NavLink to="/home">Home</NavLink>
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -221,17 +220,17 @@ function InsuranceList() {
             </div>
 
             <div className="block gap-3 py-4 md:flex">
-                <div className="w-full md:w-64 rounded-lg bg-white shadow-sm md:mb-0">
+                <div className="w-full md:w-64 rounded-lg bg-[rgb(255,255,255)] dark:bg-navbarBack  shadow-sm md:mb-0">
                     <div className="p-6">
-                        <h2 className="mb-4 text-[24px] font-semibold text-gray-900">Customer Info</h2>
+                        <h2 className="mb-4 text-[24px] font-semibold text-gray-900  dark:text-[rgb(255,255,255)]">Customer Info</h2>
                         <div className="space-y-3">
-                            <div><label className="text-xs text-gray-500">First Name</label><p className="text-gray-900 font-medium">{customerData.first_name || "N/A"}</p></div>
-                            <div><label className="text-xs text-gray-500">Last Name</label><p className="text-gray-900 font-medium">{customerData.last_name || "N/A"}</p></div>
-                            <div><label className="text-xs text-gray-500">Mobile</label><p className="text-gray-900 font-medium">{customerData.phone_number || "N/A"}</p></div>
-                            <div><label className="text-xs text-gray-500">Identity</label><p className="text-gray-900 font-medium">{customerData.id_Number || "N/A"}</p></div>
-                            <div><label className="text-xs text-gray-500">Birth Date</label><p className="text-gray-900 font-medium">{formatDate(customerData.birth_date)}</p></div>
-                            <div><label className="text-xs text-gray-500">Join Date</label><p className="text-gray-900 font-medium">{formatDate(customerData.joining_date)}</p></div>
-                            <div><label className="text-xs text-gray-500">City</label><p className="text-gray-900 font-medium">{customerData.city || "N/A"}</p></div>
+                            <div><label className="text-xs text-gray-500">First Name</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{customerData.first_name || "N/A"}</p></div>
+                            <div><label className="text-xs text-gray-500">Last Name</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{customerData.last_name || "N/A"}</p></div>
+                            <div><label className="text-xs text-gray-500">Mobile</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{customerData.phone_number || "N/A"}</p></div>
+                            <div><label className="text-xs text-gray-500">Identity</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{customerData.id_Number || "N/A"}</p></div>
+                            <div><label className="text-xs text-gray-500">Birth Date</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{formatDate(customerData.birth_date)}</p></div>
+                            <div><label className="text-xs text-gray-500">Join Date</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{formatDate(customerData.joining_date)}</p></div>
+                            <div><label className="text-xs text-gray-500">City</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{customerData.city || "N/A"}</p></div>
                             <div><label className="text-xs text-gray-500">Notes</label><p className="text-gray-500 text-sm">{customerData.notes || "N/A"}</p></div>
                         </div>
                     </div>
@@ -239,18 +238,18 @@ function InsuranceList() {
 
                 <div className="md:max-w-[calc(100%-17rem)] w-full">
                     {selectedVehicleDetails ? (
-                        <div className="rounded-lg bg-white p-6 shadow-sm mb-4">
-                            <h2 className="text-[20px] font-semibold text-gray-900 mb-4">Vehicle Details ({selectedVehicleDetails.plateNumber || "N/A"})</h2>
+                        <div className="rounded-lg dark:bg-navbarBack  bg-[rgb(255,255,255)] p-6 shadow-sm mb-4">
+                            <h2 className="text-[20px] font-semibold text-gray-900 mb-4  dark:text-[rgb(255,255,255)]">Vehicle Details ({selectedVehicleDetails.plateNumber || "N/A"})</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                                <div><label className="text-xs text-gray-500">Model</label><p className="text-gray-900 font-medium">{selectedVehicleDetails.model || "N/A"}</p></div>
-                                <div><label className="text-xs text-gray-500">Type</label><p className="text-gray-900 font-medium">{selectedVehicleDetails.type || "N/A"}</p></div>
-                                <div><label className="text-xs text-gray-500">Plate Number</label><p className="text-gray-900 font-medium">{selectedVehicleDetails.plateNumber || "N/A"}</p></div>
-                                <div><label className="text-xs text-gray-500">Model Year</label><p className="text-gray-900 font-medium">{selectedVehicleDetails.modelNumber || "N/A"}</p></div> {/* Assuming modelNumber is year */}
-                                <div><label className="text-xs text-gray-500">Ownership</label><p className="text-gray-900 font-medium">{selectedVehicleDetails.ownership || "N/A"}</p></div>
-                                <div><label className="text-xs text-gray-500">Color</label><p className="text-gray-900 font-medium">{selectedVehicleDetails.color || "N/A"}</p></div>
-                                <div><label className="text-xs text-gray-500">Price</label><p className="text-gray-900 font-medium">{selectedVehicleDetails.price ? `₪${selectedVehicleDetails.price}` : "N/A"}</p></div>
-                                <div><label className="text-xs text-gray-500">License Expiry</label><p className="text-gray-900 font-medium">{formatDate(selectedVehicleDetails.licenseExpiry)}</p></div>
-                                <div><label className="text-xs text-gray-500">Last Test</label><p className="text-gray-900 font-medium">{formatDate(selectedVehicleDetails.lastTest)}</p></div>
+                                <div><label className="text-xs text-gray-500">Model</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{selectedVehicleDetails.model || "N/A"}</p></div>
+                                <div><label className="text-xs text-gray-500">Type</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{selectedVehicleDetails.type || "N/A"}</p></div>
+                                <div><label className="text-xs text-gray-500">Plate Number</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{selectedVehicleDetails.plateNumber || "N/A"}</p></div>
+                                <div><label className="text-xs text-gray-500">Model Year</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{selectedVehicleDetails.modelNumber || "N/A"}</p></div> {/* Assuming modelNumber is year */}
+                                <div><label className="text-xs text-gray-500">Ownership</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{selectedVehicleDetails.ownership || "N/A"}</p></div>
+                                <div><label className="text-xs text-gray-500">Color</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{selectedVehicleDetails.color || "N/A"}</p></div>
+                                <div><label className="text-xs text-gray-500">Price</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{selectedVehicleDetails.price ? `₪${selectedVehicleDetails.price}` : "N/A"}</p></div>
+                                <div><label className="text-xs text-gray-500">License Expiry</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{formatDate(selectedVehicleDetails.licenseExpiry)}</p></div>
+                                <div><label className="text-xs text-gray-500">Last Test</label><p className="text-gray-900 font-medium  dark:text-[rgb(255,255,255)]">{formatDate(selectedVehicleDetails.lastTest)}</p></div>
                             </div>
                         </div>
                     ) : (
@@ -276,9 +275,9 @@ function InsuranceList() {
 
                     )}
 
-                    <div className="rounded-lg bg-white p-6 shadow-sm">
+                    <div className="rounded-lg bg-[rgb(255,255,255)] p-6 shadow-sm dark:bg-navbarBack ">
                         <div className="mb-4 flex items-center justify-between">
-                            <h2 className="text-[24px] font-semibold text-gray-900">Vehicle Insurances</h2>
+                            <h2 className="text-[24px] font-semibold text-gray-900 dark:text-[rgb(255,255,255)]">Vehicle Insurances</h2>
                         </div>
                         <div style={{ height: 400, width: '100%' }}>
                             <DataGrid

@@ -145,8 +145,8 @@ function InsuranceCompany() {
     ];
 
     return (
-        <div className="p-4" style={{ minHeight: '100vh' }}>
-            <div className="bg-white flex p-[22px] rounded-md justify-between items-center mb-3">
+        <div className="py-10 px-4 dark:bg-dark2 dark:text-dark3" style={{ minHeight: '100vh' }}>
+            <div className="bg-[rgb(255,255,255)] dark:bg-navbarBack flex p-[22px] rounded-md justify-between items-center mb-3">
                 <div className="flex gap-[14px]">
                     <a className href="/home" data-discover="true">Home</a>
                     <svg width={21} height={20} viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -156,13 +156,12 @@ function InsuranceCompany() {
                 </div>
                 <button
                     onClick={() => setShowAddForm(true)}
-                    className="p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                    className="p-2 bg-indigo-600  text-[rgb(255,255,255)] rounded-md hover:bg-blue-700"
                 >
                     Add new Insurance Company
                 </button>
             </div>
 
-            {/* DataGrid */}
             <DataGrid
                 rows={companies}
                 columns={columns}
@@ -173,10 +172,9 @@ function InsuranceCompany() {
                 getRowId={(row) => row.id}
             />
 
-            {/* Edit Insurance Company Form */}
             {showForm && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-                    <div className="2md:w-75 w-full max-w-[800px] bg-white rounded-lg shadow-lg p-6">
+                    <div className="2md:w-75 w-full max-w-[800px] bg-[rgb(255,255,255)] rounded-lg shadow-lg p-6 dark:bg-dark2">
                         <div className="flex items-center justify-between pb-1 p-2 rounded-md">
                             <h2 className="text-2xl font-semibold rounded-md">Edit Insurance Company</h2>
                             <button onClick={() => setShowForm(false)} className="p-1 rounded-full hover:bg-gray-100">
@@ -184,25 +182,25 @@ function InsuranceCompany() {
                             </button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="mt-2 space-y-4 border border-gray-300 rounded-md">
+                        <form onSubmit={handleSubmit} className="mt-2 space-y-4 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md">
                             <div className="grid grid-cols-2 gap-3 px-4 py-4">
                                 <div>
                                     <label className="block text-sm font-medium">Company Name</label>
-                                    <input type="text" name="name" className="w-full p-2 border rounded-md" value={formData.name || ''} onChange={handleInputChange} />
+                                    <input type="text" name="name" className="w-full p-2 border  dark:bg-navbarBack  rounded-md" value={formData.name || ''} onChange={handleInputChange} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium">Contact Info</label>
-                                    <input type="text" name="contact" className="w-full p-2 border rounded-md" value={formData.contact || ''} onChange={handleInputChange} />
+                                    <input type="text" name="contact" className="w-full p-2 border  dark:bg-navbarBack  rounded-md" value={formData.contact || ''} onChange={handleInputChange} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium">Address</label>
-                                    <input type="text" name="address" className="w-full p-2 border rounded-md" value={formData.address || ''} onChange={handleInputChange} />
+                                    <input type="text" name="address" className="w-full p-2 border  dark:bg-navbarBack  rounded-md" value={formData.address || ''} onChange={handleInputChange} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium">Insurance Type</label>
                                     <select
                                         name="insuranceType"
-                                        className="w-full p-2 border rounded-md"
+                                        className="w-full p-2 border  dark:bg-navbarBack  rounded-md"
                                         value={formData.insuranceType || ''}
                                         onChange={handleInputChange}
                                     >
@@ -221,7 +219,7 @@ function InsuranceCompany() {
                                                 <input
                                                     type="number"
                                                     name="rates.baseRate"
-                                                    className="w-full p-2 border rounded-md"
+                                                    className="w-full p-2 border  dark:bg-navbarBack  rounded-md"
                                                     value={formData.rates?.baseRate || ''}
                                                     onChange={handleInputChange}
                                                 />
@@ -231,7 +229,7 @@ function InsuranceCompany() {
                                                 <input
                                                     type="number"
                                                     name="rates.ageFactor"
-                                                    className="w-full p-2 border rounded-md"
+                                                    className="w-full p-2 border  dark:bg-navbarBack  rounded-md"
                                                     value={formData.rates?.ageFactor || ''}
                                                     onChange={handleInputChange}
                                                 />
@@ -241,7 +239,7 @@ function InsuranceCompany() {
                                                 <input
                                                     type="number"
                                                     name="rates.vehicleAgeFactor"
-                                                    className="w-full p-2 border rounded-md"
+                                                    className="w-full p-2 border  dark:bg-navbarBack  rounded-md"
                                                     value={formData.rates?.vehicleAgeFactor || ''}
                                                     onChange={handleInputChange}
                                                 />
@@ -251,7 +249,7 @@ function InsuranceCompany() {
                                                 <input
                                                     type="number"
                                                     name="rates.vehicleValueFactor"
-                                                    className="w-full p-2 border rounded-md"
+                                                    className="w-full p-2 border  dark:bg-navbarBack  rounded-md"
                                                     value={formData.rates?.vehicleValueFactor || ''}
                                                     onChange={handleInputChange}
                                                 />
@@ -262,7 +260,7 @@ function InsuranceCompany() {
                             </div>
 
                             <div className="flex justify-end px-4 pb-4">
-                                <button type="submit" className="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-500">
+                                <button type="submit" className="px-4 py-2 text-[rgb(255,255,255)] bg-indigo-600 rounded-md hover:bg-indigo-500">
                                     Save Changes
                                 </button>
                             </div>

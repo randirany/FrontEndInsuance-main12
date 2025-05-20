@@ -150,7 +150,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-3">
-            <div className="w-full max-w-[800px] bg-white rounded-lg shadow-lg p-6">
+      <div className="2md:w-75 w-full max-w-[800px] bg-[rgb(255,255,255)] rounded-lg shadow-lg p-6 dark:bg-dark2">
                 <div className="flex items-center justify-between pb-1 p-2 rounded-md">
                     <h2 className="text-2xl font-semibold">Add New Vehicle</h2>
                     <button onClick={() => onClose(false)} className="p-1 rounded-full hover:bg-gray-100">
@@ -158,17 +158,18 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                     </button>
                 </div>
 
-                <form className="mt-2 space-y-4 rounded-md border border-gray-300 pt-3" onSubmit={handleSubmit}>
+                <form className="mt-2 space-y-4 rounded-md border dark:bg-dark2  pt-3" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-2 gap-3 px-4">
                         <div>
                             <label className="block text-sm font-medium">Vehicle Name</label>
                             <input
                                 type="text"
                                 name="model"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 placeholder="Enter Vehicle Model"
                                 value={formData.model}
                                 onChange={handleInputChange}
+
                             />
                         </div>
                         <div>
@@ -176,7 +177,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="text"
                                 name="plateNumber"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 placeholder="Enter Vehicle Number"
                                 value={formData.plateNumber}
                                 onChange={handleInputChange}
@@ -194,7 +195,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="text"
                                 name="modelNumber"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 placeholder="Enter Chassis Number"
                                 value={formData.modelNumber}
                                 onChange={handleInputChange}
@@ -205,7 +206,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="text"
                                 name="type"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 placeholder="Enter Vehicle Type"
                                 value={formData.type}
                                 onChange={handleInputChange}
@@ -216,7 +217,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="text"
                                 name="ownership"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 placeholder="Enter Ownership"
                                 value={formData.ownership}
                                 onChange={handleInputChange}
@@ -227,7 +228,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="date"
                                 name="licenseExpiry"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 value={formData.licenseExpiry}
                                 onChange={handleInputChange}
                             />
@@ -237,7 +238,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="date"
                                 name="lastTest"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 value={formData.lastTest}
                                 onChange={handleInputChange}
                             />
@@ -247,7 +248,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="text"
                                 name="color"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 placeholder="Enter Vehicle Color"
                                 value={formData.color}
                                 onChange={handleInputChange}
@@ -258,7 +259,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                             <input
                                 type="text"
                                 name="price"
-                                className="w-full p-1 border rounded-md"
+                                className="w-full p-1 border  dark:bg-navbarBack  rounded-md"
                                 placeholder="Enter Vehicle Price"
                                 value={formData.price}
                                 onChange={handleInputChange}
@@ -271,7 +272,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                         <div
                             onClick={handleBrowseClick}
                             ref={dropAreaRef}
-                            className={`w-full h-[100px] flex cursor-pointer items-center justify-center border-2 rounded-md bg-[#DEE4EE] ${isDragging ? "border-[#5750F1] bg-[#5750F1]/5" : "border-gray-300"}`}
+                            className={`w-full h-[100px] flex cursor-pointer items-center justify-center border  dark:bg-navbarBack -2 rounded-md bg-[#DEE4EE] ${isDragging ? "border  dark:bg-navbarBack -[#5750F1] bg-[#5750F1]/5" : "border  dark:bg-navbarBack -gray-300"}`}
                             onDragOver={handleDragOver}
                             onDragLeave={handleDragLeave}
                             onDrop={handleDrop}
@@ -287,7 +288,7 @@ function Add_vehicle({ onClose, isOpen, onVehicleAdded, insuredId }) {
                         <input
                             type="submit"
                             value="Submit"
-                            className="px-4 py-2 text-white w-full bg-indigo-600 rounded-md hover:bg-indigo-500"
+                            className="px-4 py-2 text-[rgb(255,255,255)] w-full bg-indigo-600 rounded-md hover:bg-indigo-500"
                         />
                     </div>
                 </form>

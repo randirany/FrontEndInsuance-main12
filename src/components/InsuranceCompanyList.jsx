@@ -86,7 +86,7 @@ function InsuranceCompanyList() {
     }
 
     return (
-        <div className="bg-white rounded-lg shadow-md">
+        <div className="bg-[rgb(255,255,255)] rounded-lg shadow-md">
             <div className="p-6">
                 <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
                     <div className="relative w-full md:w-80">
@@ -108,11 +108,11 @@ function InsuranceCompanyList() {
                             placeholder="بحث عن شركة تأمين..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="pl-10 text-right w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="pl-10 text-right w-full border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             dir="rtl"
                         />
                         <Link to='/add_Company'
-                            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md w-full md:w-auto disabled:opacity-50"
+                            className="bg-indigo-600  hover:bg-blue-700 text-[rgb(255,255,255)] px-4 py-2 rounded-md w-full md:w-auto disabled:opacity-50"
                         >اضافة شركة تامين                </Link>
                     </div>
                 </div>
@@ -156,14 +156,14 @@ function InsuranceCompanyList() {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-white divide-y divide-gray-200">
+                            <tbody className="bg-[rgb(255,255,255)] divide-y divide-gray-200">
                                 {filteredCompanies.map((company) => (
                                     <tr key={company._id}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-right font-medium">{company.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-right">{company.insuranceType}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-right">{company.contact || "غير متوفر"}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-right">{company.address || "غير متوفر"}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-right">
+                                        <td className="px-6 py-4 [rgb(255,255,255)]space-nowrap text-right font-medium">{company.name}</td>
+                                        <td className="px-6 py-4 [rgb(255,255,255)]space-nowrap text-right">{company.insuranceType}</td>
+                                        <td className="px-6 py-4 [rgb(255,255,255)]space-nowrap text-right">{company.contact || "غير متوفر"}</td>
+                                        <td className="px-6 py-4 [rgb(255,255,255)]space-nowrap text-right">{company.address || "غير متوفر"}</td>
+                                        <td className="px-6 py-4 [rgb(255,255,255)]space-nowrap text-right">
                                             <div className="flex items-center justify-end gap-2">
                                                 <Link to={`/EditInsurance_company/${company._id}`} state={{ company }}>                                                    <button className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-1 rounded-md text-sm flex items-center">
                                                     <svg
@@ -216,7 +216,7 @@ function InsuranceCompanyList() {
             {/* Modal for Delete Confirmation */}
             {showDeleteModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+                    <div className="bg-[rgb(255,255,255)] rounded-lg p-6 max-w-md w-full mx-4">
                         <h3 className="text-lg font-medium mb-2 text-right">هل أنت متأكد من حذف هذه الشركة؟</h3>
                         <p className="text-gray-500 mb-4 text-right">
                             هذا الإجراء لا يمكن التراجع عنه. سيتم حذف شركة التأمين نهائياً من قاعدة البيانات.
@@ -225,7 +225,7 @@ function InsuranceCompanyList() {
                             <button
                                 onClick={handleDeleteCompany}
                                 disabled={deleteLoading}
-                                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md"
+                                className="bg-red-600 hover:bg-red-700 text-[rgb(255,255,255)] px-4 py-2 rounded-md"
                             >
                                 {deleteLoading ? "جاري الحذف..." : "نعم، حذف الشركة"}
                             </button>

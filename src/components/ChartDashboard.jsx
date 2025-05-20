@@ -24,15 +24,15 @@ const ChartDashboard = () => {
   const [timeframe, setTimeframe] = useState("Monthly")
 
   return (
-    <div className="w-full rounded-xl bg-white p-6 shadow-sm my-4">
+    <div className="w-full rounded-xl bg-[rgb(255,255,255)] p-6 shadow-sm my-4 dark:bg-navbarBack dark:text-navbarBack">
       <div className="h-[300px] w-full">
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900">{t("home.chart.title")} </h2>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-[rgb(255,255,255)]">{t("home.chart.title")} </h2>
           <div className="relative">
             <select
               value={timeframe}
               onChange={(e) => setTimeframe(e.target.value)}
-              className="rounded-lg border border-gray-200 bg-white px-4 py-2 pr-8 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="dark:bg-navbarBack rounded-lg border dark:border-borderNav border dark:border-borderNav-gray-200 bg-[rgb(255,255,255)] px-4 py-2 pr-8 text-sm focus:border dark:border-borderNav-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             >
               <option >Monthly</option>
               <option>Yearly</option>
@@ -66,11 +66,11 @@ const ChartDashboard = () => {
       <div className="mt-[5rem] grid grid-cols-2 divide-x divide-gray-200">
         <div className="px-4 text-center">
           <p className="text-sm font-medium text-gray-500">{t("home.chart.ReceivedAmount")}</p>
-          <p className="mt-2 text-2xl font-semibold text-gray-900">$580.00</p>
+          <p className="mt-2 text-2xl font-semibold text-gray-900 dark:text-[rgb(255,255,255)]">$580.00</p>
         </div>
         <div className="px-4 text-center">
           <p className="text-sm font-medium text-gray-500">{t("home.chart.DueAmount")}</p>
-          <p className="mt-2 text-2xl font-semibold text-gray-900">$628.00</p>
+          <p className="mt-2 text-2xl font-semibold text-gray-900 dark:text-[rgb(255,255,255)]">$628.00</p>
         </div>
       </div>
     </div>

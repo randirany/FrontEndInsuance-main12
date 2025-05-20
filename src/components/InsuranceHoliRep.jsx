@@ -276,7 +276,6 @@ function InsuranceHoliRep({ onClose, isOpen }) {
             case 1: return t('holi.insuranceVehicleTitle');
             case 2: return t('holi.ownerDriverTitle');
             case 3: return t('holi.accidentDetailsTitle');
-            case 4: return t('holi.otherVehiclesTitle');
             case 5: return t('holi.involvementInjuriesTitle');
             case 6: return t('holi.signaturesNotesTitle');
             default: return '';
@@ -288,7 +287,7 @@ function InsuranceHoliRep({ onClose, isOpen }) {
             <div className="flex justify-between items-center">
                 {[1, 2, 3, 4, 5, 6].map((step) => ( 
                     <div key={step} className="flex flex-col items-center text-center flex-1 px-1">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-xs font-medium ${currentStep >= step ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
+                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-xs font-medium ${currentStep >= step ? 'bg-indigo-600 text-[rgb(255,255,255)]' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
                         <span className="text-[10px] leading-tight mt-1 text-gray-600">
                             {step === 1 && t('holi.step1Indicator')}
                             {step === 2 && t('holi.step2Indicator')}
@@ -315,7 +314,7 @@ function InsuranceHoliRep({ onClose, isOpen }) {
                         name={name}
                         checked={Boolean(value)}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                        className="h-4 w-4 text-indigo-600 border dark:border-borderNav-gray-300 rounded focus:ring-indigo-500"
                     />
                     <label htmlFor={inputId} className="ml-2 block text-sm font-medium text-gray-700">
                         {t(label)} {required && <span className="text-red-500">*</span>}
@@ -326,14 +325,14 @@ function InsuranceHoliRep({ onClose, isOpen }) {
 
         return (
             <div className="mb-2">
-                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700">{t(label)} {required && <span className="text-red-500">*</span>}</label>
+                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]">{t(label)} {required && <span className="text-red-500">*</span>}</label>
                 {type === "select" ? (
                     <select
                         id={inputId}
                         name={name}
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md text-sm"
                         required={required}
                     >
                         <option value="">{options && options.find(o => o.value === '') ? t(options.find(o => o.value === '').label) : t("selectDefault")}</option>
@@ -346,7 +345,7 @@ function InsuranceHoliRep({ onClose, isOpen }) {
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
                         rows="2"
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md text-sm"
                         required={required}
                     ></textarea>
                 ) : (
@@ -356,7 +355,7 @@ function InsuranceHoliRep({ onClose, isOpen }) {
                         name={name}
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md text-sm"
                         required={required}
                         step={type === "number" ? "any" : undefined}
                     />
@@ -374,7 +373,7 @@ function InsuranceHoliRep({ onClose, isOpen }) {
                     placeholder="Enter Plate Number for Lookup"
                     value={lookupPlateNumber}
                     onChange={(e) => setLookupPlateNumber(e.target.value)}
-                    className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm mb-4"
+                    className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md text-sm mb-4"
                 />
             </div>
             <div>
@@ -439,7 +438,7 @@ function InsuranceHoliRep({ onClose, isOpen }) {
         <div>
             <h3 className="text-lg font-semibold text-gray-700 mb-3">{t("holi.otherVehiclesTitle")}</h3>
             {(formData.otherVehicles || []).map((vehicle, index) => (
-                <div key={index} className="bg-gray-50 p-3 rounded-md mb-4 border border-gray-200">
+                <div key={index} className="bg-gray-50 p-3 rounded-md mb-4 border-gray-200 dark:bg-dark2">
                     <div className="flex justify-between items-center mb-2">
                         <h4 className="text-md font-medium text-gray-600">{t('holi.otherVehicleItemTitle', { index: index + 1 })}</h4>
                         <button type="button" onClick={() => removeArrayItem('otherVehicles', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -478,7 +477,7 @@ function InsuranceHoliRep({ onClose, isOpen }) {
             <div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">{t("holi.injuriesTitle")}</h3>
                 {(formData.injuries || []).map((injury, index) => (
-                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border border-gray-200">
+                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border dark:border-borderNav border dark:border-borderNav-gray-200">
                         <div className="flex justify-between items-center mb-2">
                             <h4 className="text-md font-medium text-gray-600">{t('holi.injuryItemTitle', { index: index + 1 })}</h4>
                             <button type="button" onClick={() => removeArrayItem('injuries', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -523,15 +522,15 @@ function InsuranceHoliRep({ onClose, isOpen }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-y-auto py-4">
-            <div className="w-full max-w-[1000px] bg-white rounded-lg shadow-lg">
-                <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200">
-                    <h2 className="text-lg font-semibold text-gray-800">{t('holi.modalTitle')}</h2>
+            <div className="w-full max-w-[900px] bg-[rgb(255,255,255)] dark:bg-navbarBack dark:text-dark4 rounded-lg shadow-lg">
+                <div className="flex items-center justify-between px-6 py-3 border-b  ">
+                    <h2 className="text-lg font-semibold text-gray-700  dark:text-[rgb(255,255,255)]">{t('holi.modalTitle')}</h2>
                     <button onClick={onClose} className="p-1 rounded-full text-gray-500 hover:bg-gray-100" disabled={isSubmitting}><X className="w-5 h-5" /></button>
                 </div>
                 {renderStepIndicator()}
                 <form onSubmit={handleSubmit} className="rounded-md">
-                    <div className="flex items-center justify-between pb-2 border-b border-gray-300 mx-6 mb-3">
-                        <p className="text-md font-semibold text-gray-700">{getStepTitle()}</p>
+                    <div className="flex items-center justify-between pb-2 border-b  border-gray-300 mx-6 mb-3">
+                        <p className="text-md font-semibold text-gray-700 dark:text-[rgb(255,255,255)]">{getStepTitle()}</p>
                     </div>
                     <div className="px-6 pb-6 max-h-[calc(100vh-330px)] overflow-y-auto space-y-4">
                         {currentStep === 1 && renderInsuranceAndVehicle()}
@@ -541,12 +540,12 @@ function InsuranceHoliRep({ onClose, isOpen }) {
                         {currentStep === 5 && renderInvolvementAndInjuries()}
                         {currentStep === 6 && renderSignaturesAndNotes()}
                     </div>
-                    <div className="px-6 py-3 flex justify-between items-center border-t border-gray-200 mt-auto">
-                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>{t('backButton')}</button>
+                    <div className="px-6 py-3 flex justify-between items-center border dark:border-borderNav-t border dark:border-borderNav-gray-200 mt-auto">
+                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-[rgb(255,255,255)] border dark:border-borderNav border dark:border-borderNav-gray-300 hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>{t('backButton')}</button>
                         {currentStep < 6 ? (
-                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{t('nextButton')}</button>
+                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-[rgb(255,255,255)] bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{t('nextButton')}</button>
                         ) : (
-                            <button type="submit" className={`px-4 py-2 text-sm text-white bg-green-600 rounded-md shadow-sm hover:bg-green-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : t('submitButton')}</button>
+                            <button type="submit" className={`px-4 py-2 text-sm text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : t('submitButton')}</button>
                         )}
                     </div>
                 </form>

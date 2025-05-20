@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 const CustomerMessage = () => {
     return (
         <div className="navblayout">
-            <div className="bg-white flex p-[20px] rounded-md justify-between items-center">
+            <div className="bg-[rgb(255,255,255)] flex p-[20px] rounded-md justify-between items-center mt-5">
                 <div className="flex gap-[14px]">
                     <NavLink to="/home">Home</NavLink>
                     <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,13 +17,13 @@ const CustomerMessage = () => {
                     <NavLink to="/message">Customers Messages</NavLink>
                 </div>
 
-                {/* <button onClick={() => { setAddCustomerOpen(true); console.log('open') }} className="bg-[#5750F1] py-[3px] px-[10px] rounded-md text-white text-[12px]">
+                {/* <button onClick={() => { setAddCustomerOpen(true); console.log('open') }} className="bg-[#5750F1] py-[3px] px-[10px] rounded-md text-[rgb(255,255,255)] text-[12px]">
           Add New Customer
         </button> */}
             </div>
             <div className='flex py-4 h-[100vh] '>
-                <div className='w-80 rounded-l-lg bg-white p-3 shadow-sm overflow-auto'>
-                    <div className='border-b-[1.5px]'>
+                <div className='w-80 rounded-l-lg bg-[rgb(255,255,255)] p-3 shadow-sm overflow-auto'>
+                    <div className='border dark:border-borderNav-b-[1.5px]'>
                         <div className='flex justify-between items-center'>
                             <div className='max-w-[240px] flex gap-2'>
                                 <div>
@@ -45,10 +45,10 @@ const CustomerMessage = () => {
 
                             </div>
                         </div>
-                        <form className="sticky top-0 z-10 bg-white dark:bg-gray-dark  my-3"> {/* Adjusted z-index */}
+                        <form className="sticky top-0 z-10 bg-[rgb(255,255,255)] dark:bg-gray-dark  my-3"> {/* Adjusted z-index */}
                             <div className="relative">
                                 <input
-                                    className="w-full max-w-xs rounded-[7px] bg-[#F3F4F6] border border-gray-300 py-2.5 pl-10 pr-4 text-sm text-gray-700 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 dark:border-dark-3 dark:bg-dark-2 dark:text-white dark:focus:border-primary" // Adjusted styling
+                                    className="w-full max-w-xs rounded-[7px] bg-[#F3F4F6] border dark:border-borderNav border dark:border-borderNav-gray-300 py-2.5 pl-10 pr-4 text-sm text-gray-700 outline-none focus:border dark:border-borderNav-blue-500 focus:ring-1 focus:ring-blue-500 dark:border dark:border-borderNav-dark-3 dark:bg-dark-2 dark:text-[rgb(255,255,255)] dark:focus:border dark:border-borderNav-primary" // Adjusted styling
                                     placeholder={('Search...')} 
                                     type="text"
                                 />
@@ -74,7 +74,7 @@ const CustomerMessage = () => {
                                 </div>
                                 <div className="time flex flex-col items-end gap-1">
                                     <span className='text-xs text-[#A9ABB6]'>10:35AM</span>
-                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-white text-xs'>1</span>
+                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-[rgb(255,255,255)] text-xs'>1</span>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ const CustomerMessage = () => {
                                 </div>
                                 <div className="time flex flex-col items-end gap-1">
                                     <span className='text-xs text-[#A9ABB6]'>10:35AM</span>
-                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-white text-xs'>1</span>
+                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-[rgb(255,255,255)] text-xs'>1</span>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ const CustomerMessage = () => {
                                 </div>
                                 <div className="time flex flex-col items-end gap-1">
                                     <span className='text-xs text-[#A9ABB6]'>10:35AM</span>
-                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-white text-xs'>1</span>
+                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-[rgb(255,255,255)] text-xs'>1</span>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@ const CustomerMessage = () => {
                                 </div>
                                 <div className="time flex flex-col items-end gap-1">
                                     <span className='text-xs text-[#A9ABB6]'>10:35AM</span>
-                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-white text-xs'>1</span>
+                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-[rgb(255,255,255)] text-xs'>1</span>
                                 </div>
                             </div>
                         </div>
@@ -142,14 +142,14 @@ const CustomerMessage = () => {
                                 </div>
                                 <div className="time flex flex-col items-end gap-1">
                                     <span className='text-xs text-[#A9ABB6]'>10:35AM</span>
-                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-white text-xs'>1</span>
+                                    <span className='w-[15px] h-[15px] rounded-full bg-[#6C5FFC] flex justify-center items-center text-[rgb(255,255,255)] text-xs'>1</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='max-w-[calc(100%-20rem)] flex-1 rounded-r-lg bg-white px-3 shadow-sm  overflow-auto'>
-                    <div className='border-b-[1.5px] py-2 sticky top-0 right-0 z-9 bg-white w-100'>
+                <div className='max-w-[calc(100%-20rem)] flex-1 rounded-r-lg bg-[rgb(255,255,255)] px-3 shadow-sm  overflow-auto'>
+                    <div className='border dark:border-borderNav-b-[1.5px] py-2 sticky top-0 right-0 z-9 bg-[rgb(255,255,255)] w-100'>
                         <div className="">
                             <div className="flex justify-between items-center">
                                 <div className='max-w-[240px] flex gap-2 items-center'>
@@ -196,7 +196,7 @@ const CustomerMessage = () => {
                                     <div className='max-w-6'>
                                         <img src="https://html.bdevs.net/manez.prev/assets/images/avatar/avatar10.png" className='w-full rounded-full' alt="" />
                                     </div>
-                                    <div className='message-body bg-[#6C5FFC] text-white p-1 rounded-lg'>
+                                    <div className='message-body bg-[#6C5FFC] text-[rgb(255,255,255)] p-1 rounded-lg'>
                                         <p>NO. I did not get it
                                         </p>
                                     </div>
@@ -222,7 +222,7 @@ const CustomerMessage = () => {
                         </div>
                     </div>
 
-                    <div className='border-t-[1.5px] py-2 sticky bottom-0 z-50 bg-white w-full'>
+                    <div className='border dark:border-borderNav-t-[1.5px] py-2 sticky bottom-0 z-50 bg-[rgb(255,255,255)] w-full'>
                         <div className="flex items-center gap-2 px-4">
                             <button className="text-gray-500 hover:text-blue-500">
                                 <svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -233,7 +233,7 @@ const CustomerMessage = () => {
                             <input
                                 type="text"
                                 placeholder="Write Something..."
-                                className="flex-1 border-none outline-none bg-transparent text-sm placeholder-gray-400"
+                                className="flex-1 border dark:border-borderNav-none outline-none bg-transparent text-sm placeholder-gray-400"
                             />
 
                             {/* أيقونات */}
@@ -261,9 +261,9 @@ const CustomerMessage = () => {
                             </div>
 
                             {/* زر الإرسال */}
-                            <button className="bg-[#6C5FFC] hover:bg-blue-600 text-white rounded-full p-2">
+                            <button className="bg-[#6C5FFC] hover:bg-indigo-600  text-[rgb(255,255,255)] rounded-full p-2">
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.3798 10.7124L3.26922 12.0636C3.17597 12.0791 3.08847 12.119 3.01551 12.1791C2.94254 12.2392 2.88669 12.3174 2.85357 12.4059L0.0570815 19.8972C-0.209969 20.5862 0.510421 21.243 1.17158 20.9114L20.5543 11.2216C20.6882 11.1545 20.8009 11.0514 20.8796 10.9239C20.9583 10.7965 21 10.6496 21 10.4998C21 10.3499 20.9583 10.2031 20.8796 10.0756C20.8009 9.94808 20.6882 9.84501 20.5543 9.77787L1.17158 0.0881315C0.510421 -0.242396 -0.209969 0.414353 0.0570815 1.10232L2.85465 8.59357C2.88777 8.6821 2.94362 8.76035 3.01658 8.82045C3.08955 8.88055 3.17705 8.92038 3.2703 8.93594L11.3809 10.2871C11.4315 10.2952 11.4775 10.321 11.5108 10.36C11.544 10.399 11.5623 10.4485 11.5623 10.4998C11.5623 10.551 11.544 10.6005 11.5108 10.6395C11.4775 10.6785 11.4315 10.7043 11.3809 10.7124H11.3798Z" fill="white"></path>
+                                    <path d="M11.3798 10.7124L3.26922 12.0636C3.17597 12.0791 3.08847 12.119 3.01551 12.1791C2.94254 12.2392 2.88669 12.3174 2.85357 12.4059L0.0570815 19.8972C-0.209969 20.5862 0.510421 21.243 1.17158 20.9114L20.5543 11.2216C20.6882 11.1545 20.8009 11.0514 20.8796 10.9239C20.9583 10.7965 21 10.6496 21 10.4998C21 10.3499 20.9583 10.2031 20.8796 10.0756C20.8009 9.94808 20.6882 9.84501 20.5543 9.77787L1.17158 0.0881315C0.510421 -0.242396 -0.209969 0.414353 0.0570815 1.10232L2.85465 8.59357C2.88777 8.6821 2.94362 8.76035 3.01658 8.82045C3.08955 8.88055 3.17705 8.92038 3.2703 8.93594L11.3809 10.2871C11.4315 10.2952 11.4775 10.321 11.5108 10.36C11.544 10.399 11.5623 10.4485 11.5623 10.4998C11.5623 10.551 11.544 10.6005 11.5108 10.6395C11.4775 10.6785 11.4315 10.7043 11.3809 10.7124H11.3798Z" fill="[rgb(255,255,255)]"></path>
                                 </svg>
                             </button>
                         </div>

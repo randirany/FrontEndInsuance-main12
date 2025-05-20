@@ -515,7 +515,7 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
             <div className="flex justify-between items-center">
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((step) => (
                     <div key={step} className="flex flex-col items-center text-center flex-1 px-1">
-                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-xs font-medium ${currentStep >= step ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
+                        <div className={`w-8 h-8 flex items-center justify-center rounded-full text-xs font-medium ${currentStep >= step ? 'bg-indigo-600 text-[rgb(255,255,255)]' : 'bg-gray-200 text-gray-600'}`}>{step}</div>
                         <span className="text-[10px] leading-tight mt-1 text-gray-600">
                             {step === 1 && t('takaful.step1Indicator')}
                             {step === 2 && t('takaful.step2Indicator')}
@@ -553,14 +553,14 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
         }
         return (
             <div className="mb-2">
-                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700">{t(label)} {required && <span className="text-red-500">*</span>}</label>
+                <label htmlFor={inputId} className="block text-sm font-medium text-gray-700 dark:text-[rgb(255,255,255)]">{t(label)} {required && <span className="text-red-500">*</span>}</label>
                 {type === "select" ? (
                     <select
                         id={inputId}
                         name={name}
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md text-sm"
                         required={required}
                     >
                         <option value="">{t("selectDefault")}</option>
@@ -573,7 +573,7 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
                         rows="2"
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md text-sm"
                         required={required}
                     ></textarea>
                 ) : (
@@ -583,7 +583,7 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
                         name={name}
                         value={value || ''}
                         onChange={(e) => handleChange(e, section, subField, arrayName, index, itemField, subSubField)}
-                        className="mt-1 w-full p-2 border border-gray-300 rounded-md text-sm"
+                        className="mt-1 w-full p-2 border dark:border-borderNav border dark:border-borderNav-gray-300 rounded-md text-sm"
                         required={required}
                         step={type === "number" ? "any" : undefined}
                         min={type === "number" ? 0 : undefined}
@@ -689,7 +689,7 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
         <div>
             <h3 className="text-lg font-semibold text-gray-700 mb-3">Other Vehicles Involved</h3>
             {(formData.otherVehicles || []).map((vehicle, index) => (
-                <div key={index} className="bg-gray-50 p-3 rounded-md mb-4 border border-gray-200">
+                <div key={index} className="bg-gray-50 p-3 rounded-md mb-4 border-gray-200 dark:bg-dark2">
                     <div className="flex justify-between items-center mb-2">
                         <h4 className="text-md font-medium text-gray-600">{t('takaful.otherVehicleItemTitle', { index: index + 1 })}</h4>
                         <button type="button" onClick={() => removeArrayItem('otherVehicles', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -731,7 +731,7 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
                 <div className="mt-4">
                     <h4 className="text-md font-medium text-gray-600 mb-2">{t("takaful.witnessesTitle")}</h4>
                     {(formData.policeAndWitnesses.witnesses || []).map((witness, index) => (
-                        <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border border-gray-200">
+                        <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border dark:border-borderNav border dark:border-borderNav-gray-200">
                             <div className="flex justify-between items-center mb-2">
                                 <h5 className="text-sm font-medium text-gray-500">{t('takaful.witnessItemTitle', { index: index + 1 })}</h5>
                                 <button type="button" onClick={() => removeArrayItem('policeAndWitnesses.witnesses', index)}
@@ -753,7 +753,7 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
             <div>
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">{t("takaful.passengersTitle")}</h3>
                 {(formData.passengers || []).map((passenger, index) => (
-                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border border-gray-200">
+                    <div key={index} className="bg-gray-50 p-3 rounded-md mb-3 border dark:border-borderNav border dark:border-borderNav-gray-200">
                         <div className="flex justify-between items-center mb-2">
                             <h4 className="text-md font-medium text-gray-600">{t('takaful.passengerItemTitle', { index: index + 1 })}</h4>
                             <button type="button" onClick={() => removeArrayItem('passengers', index)} className="text-sm text-red-600 hover:text-red-800" disabled={isSubmitting}>{t('deleteButton')}</button>
@@ -786,7 +786,7 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
             </div>
             {renderCommonInput("takaful.receiverNotesLabel", "receiverNotes", formData.receiverNotes, "textarea", true, null, "receiverNotes")}
 
-            <div className="pt-4 border-t">
+            <div className="pt-4 border dark:border-borderNav-t">
                 <h3 className="text-lg font-semibold text-gray-700 mb-3">{t("takaful.declarationTitle")}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {renderCommonInput("takaful.declarerNameLabel", "declarerName", formData.declaration.declarerName, "text", true, "declaration", "declarerName")}
@@ -803,15 +803,15 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-y-auto py-4">
-            <div className="w-full max-w-[1000px] bg-white rounded-lg shadow-lg">
-                <div className="flex items-center justify-between px-6 py-3 border-b border-gray-200">
-                    <h2 className="text-lg font-semibold text-gray-800">{t('takaful.modalTitle')}</h2>
+            <div className="w-full max-w-[900px] bg-[rgb(255,255,255)] dark:bg-navbarBack dark:text-dark4 rounded-lg shadow-lg">
+                <div className="flex items-center justify-between px-6 py-3 border-b  dark:border-borderNav-gray-200">
+                    <h2 className="text-lg font-semibold text-gray-700  dark:text-[rgb(255,255,255)]">{t('takaful.modalTitle')}</h2>
                     <button onClick={onClose} className="p-1 rounded-full text-gray-500 hover:bg-gray-100" disabled={isSubmitting}><X className="w-5 h-5" /></button>
                 </div>
                 {renderStepIndicator()}
                 <form onSubmit={handleSubmit} className="rounded-md">
                     <div className="flex items-center justify-between pb-2 border-b border-gray-300 mx-6 mb-3">
-                        <p className="text-md font-semibold text-gray-700">{getStepTitle()}</p>
+                        <p className="text-md font-semibold text-gray-700 dark:text-[rgb(255,255,255)]">{getStepTitle()}</p>
                     </div>
                     <div className="px-6 pb-6 max-h-[calc(100vh-330px)] overflow-y-auto space-y-4">
                         {currentStep === 1 && renderAccidentInfo()}
@@ -823,13 +823,13 @@ function InsuranceTakafulRep({ onClose, isOpen }) {
                         {currentStep === 7 && renderPolicePassengersInfo()}
                         {currentStep === 8 && renderNarrationAndDeclaration()}
                     </div>
-                    <div className="px-6 py-3 flex justify-between items-center border-t border-gray-200 mt-auto">
-                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>{t('backButton')}</button>
+                    <div className="px-6 py-3 flex justify-between items-center border-t  dark:border-borderNav-gray-200 mt-auto">
+                        <button type="button" onClick={handleBack} className={`px-4 py-2 text-sm rounded-md shadow-sm ${currentStep === 1 || isSubmitting ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'text-gray-700 bg-[rgb(255,255,255)] border dark:border-borderNav border dark:border-borderNav-gray-300 hover:bg-gray-50'}`} disabled={currentStep === 1 || isSubmitting}>{t('backButton')}</button>
                         {currentStep < 8 && (
-                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{t('nextButton')}</button>
+                            <button type="button" onClick={handleNext} className={`px-4 py-2 text-sm text-[rgb(255,255,255)] bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{t('nextButton')}</button>
                         )}
                         {currentStep === 8 && (
-                            <button type="submit" className={`px-4 py-2 text-sm text-white bg-green-600 rounded-md shadow-sm hover:bg-green-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : t('submitButton')}</button>
+                            <button type="submit" className={`px-4 py-2 text-sm text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : t('submitButton')}</button>
                         )}
                     </div>
                 </form>

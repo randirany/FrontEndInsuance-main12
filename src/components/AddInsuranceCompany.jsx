@@ -133,9 +133,9 @@ function AddInsuranceCompany({ onClose, isOpen }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-            <div className="w-full max-w-[800px] bg-white rounded-lg shadow-xl flex flex-col overflow-y-scroll hide-scrollbar h-[95vh]">
-                <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
-                    <h2 className="text-xl font-semibold text-gray-900">Add Insurance Company</h2>
+            <div className="w-full max-w-[800px] bg-[rgb(255,255,255)]  rounded-lg shadow-xl flex flex-col overflow-y-scroll hide-scrollbar h-[95vh]  dark:bg-dark2">
+                <div className="flex items-center justify-between p-4 md:p-5 border dark:border-borderNav-b rounded-t">
+                    <h2 className="text-xl font-semibold text-gray-900 dark:text-[rgb(255,255,255)]">Add Insurance Company</h2>
                     <button type="button" onClick={() => onClose(false)} className="p-1.5 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-900">
                         <X className="w-5 h-5" />
                     </button>
@@ -148,34 +148,34 @@ function AddInsuranceCompany({ onClose, isOpen }) {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label className="block mb-1 text-sm font-medium text-gray-700">Company Name</label>
-                            <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Enter company name" className="w-full p-2.5 border rounded-lg" required />
+                            <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Enter company name" className=" w-full p-2.5 border rounded-lg  dark:bg-navbarBack" required />
                         </div>
                         <div>
                             <label className="block mb-1 text-sm font-medium text-gray-700">Insurance Type</label>
-                            <select name="insuranceType" value={formData.insuranceType} onChange={(e) => handleSelectChange("insuranceType", e.target.value)} className="w-full p-2.5 border rounded-lg" required>
+                            <select name="insuranceType" value={formData.insuranceType} onChange={(e) => handleSelectChange("insuranceType", e.target.value)} className=" w-full p-2.5 border dark:border-borderNav rounded-lg  dark:bg-navbarBack " required>
                                 <option value="الزامي">الزامي</option>
                                 <option value="ثالث شامل">ثالث شامل</option>
                             </select>
                         </div>
                         <div>
                             <label className="block mb-1 text-sm font-medium text-gray-700">Contact Number</label>
-                            <input type="text" name="contact" value={formData.contact} onChange={handleInputChange} placeholder="Enter contact number" className="w-full p-2.5 border rounded-lg" required />
+                            <input type="text" name="contact" value={formData.contact} onChange={handleInputChange} placeholder="Enter contact number" className=" w-full p-2.5 border dark:border-borderNav rounded-lg   dark:bg-navbarBack" required />
                         </div>
                         <div>
                             <label className="block mb-1 text-sm font-medium text-gray-700">Address</label>
-                            <input type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Enter address" className="w-full p-2.5 border rounded-lg" required />
+                            <input type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Enter address" className=" w-full p-2.5 border dark:border-borderNav rounded-lg dark:bg-navbarBack" required />
                         </div>
                     </div>
 
                     {formData.insuranceType !== "الزامي" && (
                         <div className="mt-6">
-                            <div className="flex border-b">
+                            <div className="flex border dark:border-borderNav-b">
                                 {vehicleCategories.map((category) => (
                                     <button
                                         key={category.key}
                                         type="button"
                                         onClick={() => setActiveTab(category.key)}
-                                        className={`px-4 py-2 text-sm font-medium ${activeTab === category.key ? "border-b-2 border-blue-600 text-blue-600" : "text-gray-600 hover:text-blue-600"}`}
+                                        className={`px-4 py-2 text-sm font-medium ${activeTab === category.key ? "border dark:border-borderNav   text-blue-600" : "text-gray-600 hover:text-blue-600"}`}
                                     >
                                         {category.label}
                                     </button>
@@ -190,7 +190,7 @@ function AddInsuranceCompany({ onClose, isOpen }) {
                                             min="0"
                                             value={vehicleCategories.find(cat => cat.key === activeTab).rates[field]}
                                             onChange={(e) => handleRateChange(activeTab, field, e.target.value)}
-                                            className="w-full p-2.5 border rounded-lg"
+                                            className=" w-full p-2.5 border dark:border-borderNav rounded-lg  dark:bg-navbarBack "
                                             placeholder={`Enter ${label.toLowerCase()}`}
                                         />
                                     </div>
@@ -200,7 +200,7 @@ function AddInsuranceCompany({ onClose, isOpen }) {
                     )}
 
                     <div className="mt-6 flex justify-end">
-                        <button type="submit" disabled={loading} className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                        <button type="submit" disabled={loading} className="bg-indigo-600  text-[rgb(255,255,255)] px-6 py-2 rounded-lg hover:bg-blue-700 transition">
                             {loading ? "Saving..." : "Add Company"}
                         </button>
                     </div>

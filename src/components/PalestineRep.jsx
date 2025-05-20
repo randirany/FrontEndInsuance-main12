@@ -6,6 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InsurancePalestineRep from './InsurancePalestinelRep';
+import { Link } from 'react-router-dom';
 const t = (key, ...args) => {
     const translations = {
         "palestine.reportListTitle": "Palestine Insurance Accident Reports",
@@ -134,27 +135,48 @@ function PalestineRep() {
 
     if (loading) {
         return (
-            <Box display="flex" justifyContent="center" alignItems="center" sx={{ minHeight: '80vh' }}>
-                <CircularProgress />
-            </Box>
+            <div className='flex justify-center h-[100vh] items-center dark:text-dark4 dark:bg-dark2'>
+                <div className="sk-fading-circle ">
+                    <div className="sk-circle1 sk-circle"></div>
+                    <div className="sk-circle2 sk-circle"></div>
+                    <div className="sk-circle3 sk-circle"></div>
+                    <div className="sk-circle4 sk-circle"></div>
+                    <div className="sk-circle5 sk-circle"></div>
+                    <div className="sk-circle6 sk-circle"></div>
+                    <div className="sk-circle7 sk-circle"></div>
+                    <div className="sk-circle8 sk-circle"></div>
+                    <div className="sk-circle9 sk-circle"></div>
+                    <div className="sk-circle10 sk-circle"></div>
+                    <div className="sk-circle11 sk-circle"></div>
+                    <div className="sk-circle12 sk-circle"></div>
+                </div>
+            </div>
         );
     }
 
     return (
-        <div className="p-4" style={{ minHeight: '100vh' }}>
-
-            <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Palestine Insurance Accident Reports</h1>
+        <div className="px-4 py-7  dark:bg-dark2 dark:text-dark3" style={{ minHeight: '100vh' }}>
+            <div className="bg-[rgb(255,255,255)] dark:bg-navbarBack flex p-[22px] rounded-md justify-between items-center mb-3">
+                <div className="flex gap-[14px]">
+                    <Link className='' to="/home" data-discover="true">Home</Link>
+                    <svg width={21} height={20} viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" clipRule="evenodd" d="M11.9392 4.55806C12.1833 4.31398 12.579 4.31398 12.8231 4.55806L17.8231 9.55806C18.0672 9.80214 18.0672 10.1979 17.8231 10.4419L12.8231 15.4419C12.579 15.686 12.1833 15.686 11.9392 15.4419C11.6952 15.1979 11.6952 14.8021 11.9392 14.5581L15.8723 10.625H4.04785C3.70267 10.625 3.42285 10.3452 3.42285 10C3.42285 9.65482 3.70267 9.375 4.04785 9.375H15.8723L11.9392 5.44194C11.6952 5.19786 11.6952 4.80214 11.9392 4.55806Z" fill="#6B7280" />
+                    </svg>
+                    <a className href="/PalestineRep" data-discover="true"> Palestine Report</a>
+                </div>
                 <button
                     onClick={() => {
 
                         setShowAddReportForm(true);
                     }}
-                    className="p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center"
+                    className="p-2 bg-indigo-600  text-[rgb(255,255,255)] rounded-md hover:bg-blue-700 flex items-center"
                 >
-                    <AddIcon sx={{ mr: 0.5 }} /> {t("palestine.addReportButton")}
+                    <AddIcon sx={{ mr: 0.5 }} />          {t("palestine.addReportButton")}
+
                 </button>
             </div>
+            
+
             <Box sx={{ width: '100%' }}>
                 <DataGrid
                     rows={palestineReports}
@@ -188,7 +210,7 @@ function PalestineRep() {
                     isOpen={showAddReportForm}
                     onClose={() => {
                         setShowAddReportForm(false);
-                            fetchPalestineReports();
+                        fetchPalestineReports();
                     }}
                 />
             )}
