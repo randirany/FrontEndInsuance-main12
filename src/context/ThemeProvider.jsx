@@ -1,5 +1,3 @@
-
-
 import { createContext, useState, useEffect, useContext } from 'react';
 
 const ThemeContext = createContext();
@@ -9,19 +7,19 @@ export const useTheme = () => useContext(ThemeContext);
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = localStorage.getItem('darkMode');
-    if (savedMode) {
+    if (savedMode !== null) {
       return savedMode === 'true';
     }
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return false; // start with light mode by default
   });
 
   useEffect(() => {
     const htmlElement = document.documentElement;
     if (isDarkMode) {
-        console.log('dark')
+      console.log('dark');
       htmlElement.classList.add('dark');
     } else {
-        console.log('light')
+      console.log('light');
       htmlElement.classList.remove('dark');
     }
     localStorage.setItem('darkMode', isDarkMode.toString());
@@ -37,4 +35,3 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
