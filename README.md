@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -10,3 +11,6 @@ Currently, two official plugins are available:
 =======
 # insurance
 >>>>>>> 99f729f030647206280af4778b74dd59b2e52f9f
+=======
+# FrontEndInsuance-main12
+>>>>>>> e9c1bfcc784f63b37f1b74937aaf888918eb3e2c
